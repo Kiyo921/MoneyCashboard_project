@@ -1,9 +1,11 @@
 require_relative('../models/user')
 
 #Index
-# get "/users" do
-#   ## Probably not necessary
-# end
+get "/users" do
+  @users = User.all
+  erb(:"users/index")
+  ## Probably not necessary
+end
 
 #New
 get '/users/new' do

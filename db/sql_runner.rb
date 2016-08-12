@@ -1,5 +1,5 @@
 class SqlRunner
-  def user.run(sql)
+  def self.run(sql)
     begin
       db = PG.connect({dbname: 'cash_board', host: 'localhost'})
       result = db.exec(sql)
