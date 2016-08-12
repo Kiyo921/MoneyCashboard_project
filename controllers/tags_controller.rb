@@ -2,32 +2,32 @@ require_relative('../models/tag')
 
 
 #Index
-get "/tags" do 
+get '/tags' do 
 
 end
 
 #New
-get "/tags/new" do
+get '/tags/new' do
 
 end
 
 #Create
-post "/tags" do
+post '/tags' do
 
 end
 
 #Show
-get "/tags/show" do
+get '/tags/:id' do
 end
 
 #Edit
-get "/tags/:id/edit" do
+get '/tags/:id/edit' do
 end
 
 #Update
-post "/tags/:id" do
+post '/tags/:id' do
 end
 
 #Delete
-post "/tags" do
+post '/tags/:id/delete' do
 end

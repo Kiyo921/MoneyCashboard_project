@@ -2,32 +2,32 @@ require_relative('../models/merchant')
 
 
 #Index
-get "/merchants" do 
+get '/merchants' do 
 
 end
 
 #New
-get "/merchants/new" do
+get '/merchants/new' do
 
 end
 
 #Create
-post "/merchants" do
+post '/merchants' do
 
 end
 
 #Show
-get "/merchants/show" do
+get '/merchants/:id' do
 end
 
 #Edit
-get "/merchants/:id/edit" do
+get '/merchants/:id/edit' do
 end
 
 #Update
-post "/merchants/:id" do
+post '/merchants/:id' do
 end
 
 #Delete
-post "/merchants" do
+post '/merchants/:id/delete' do
 end

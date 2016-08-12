@@ -7,27 +7,27 @@ get "/users" do
 end
 
 #New
-get "/users/new" do
+get '/users/new' do
 
 end
 
 #Create
-post "/users" do
+post '/users' do
 
 end
 
 #Show
-get "/users/show" do
+get '/users/:id' do
 end
 
 #Edit
-get "/users/:id/edit" do
+get '/users/:id/edit' do
 end
 
 #Update
-post "/users/:id" do
+post '/users/:id' do
 end
 
 #Delete
-post "/users" do
+post '/users/:id/delete' do
 end
