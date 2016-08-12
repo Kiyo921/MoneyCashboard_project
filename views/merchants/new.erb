@@ -1,0 +1,12 @@
+<h2>Add new merchant</h2>
+<form action="/merchants" method="post">
+  <label for="merchant_name">Merchant name</label>
+  <input type="text" name="merchant_name"> 
+  <select name="transaction_id">
+    <% @transactions.each do |transaction| %>
+    <option value="<%=transactino.id%>"><%=transaction.memo %></option>
+    <% end %>
+  </select><br>
+  
+  <input type="submit" value="Add merchant!">
+</form>
