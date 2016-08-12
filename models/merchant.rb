@@ -30,9 +30,16 @@ class Merchant
   end
 
   def self.update(options)
+    sql = "UPDATE merchants SET
+          merchant_name = '#{options['merchant_name']}',
+          transaction_id = #{options['transaction_id']}
+          WHERE id = #{options['id']};"
+    SqlRunner.run(sql)
   end
 
   def self.delete(id)
+    sql = "DELETE FROM merchants WHERE id = #{id};"
+    SqlRunner.run(sql)
   end
 
   def self.map_items(sql)

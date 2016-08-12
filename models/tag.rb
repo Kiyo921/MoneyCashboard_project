@@ -22,7 +22,7 @@ class Tag
   end
 
   def self.find(id)
-    sql = "SELECT * FROM tags WHERE id = #{ids};"
+    sql = "SELECT * FROM tags WHERE id = #{id};"
     Tag.map_item(sql)
   end
 
@@ -31,9 +31,16 @@ class Tag
   end
 
   def self.update(options)
+    sql = "UPDATE tags SET
+          tag_name = '#{options['tag_name']}',
+          transaction_id = #{options['transaction_id']}
+          WHERE id = #{options['id']};"
+    SqlRunner.run(sql)
   end
 
   def self.delete(id)
+    sql = "DELETE FROM tags WHERE id = #{id};"
+    SqlRunner.run(sql)
   end
 
   def self.map_items(sql)

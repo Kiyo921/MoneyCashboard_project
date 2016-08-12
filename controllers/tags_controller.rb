@@ -1,5 +1,6 @@
+require_relative('../models/transaction')
 require_relative('../models/tag')
-require_relative('../models/transactions')
+require('pry-byebug')
 
 
 #Index

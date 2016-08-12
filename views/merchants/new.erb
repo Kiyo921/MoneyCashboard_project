@@ -4,7 +4,7 @@
   <input type="text" name="merchant_name"> 
   <select name="transaction_id">
     <% @transactions.each do |transaction| %>
-    <option value="<%=transactino.id%>"><%=transaction.memo %></option>
+    <option value="<%=transaction.id%>"><%=transaction.memo %></option>
     <% end %>
   </select><br>
   
