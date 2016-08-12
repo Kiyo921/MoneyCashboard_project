@@ -1,0 +1,11 @@
+<h2>Add new transaction</h2>
+<form action="/transactions" method="post">
+  <label for="amount">Amount</label>
+  <input type="number" name="amount">
+  <label for="memo">Memo</label>
+  <input type="text" name="memo">
+  <label for="dates">Dates</label>
+  <input type="text" name="dates">
+  <input type="text" style="display:none;" name="user_id" value="<%= @user.id%>">
+  <input type="submit" value="Add transaction!">
+</form>

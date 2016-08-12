@@ -1,4 +1,5 @@
 require_relative('../models/transaction')
+require_relative('../models/user')
 
 #Index
 get '/transactions' do
@@ -8,6 +9,7 @@ end
 
 #New
 get '/transactions/new' do
+  @user = User.find(params[:id]) #Not sure how to get user_id
   erb(:'transactions/new')
 end
 
