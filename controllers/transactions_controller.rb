@@ -1,5 +1,6 @@
 require_relative('../models/transaction')
 require_relative('../models/user')
+require("pry-byebug")
 
 #Index
 get '/transactions' do
@@ -9,7 +10,9 @@ end
 
 #New
 get '/transactions/new' do
-  @user = User.find(params[:id]) #Not sure how to get user_id
+  #@user = User.find(params[:id]) 
+  #Not sure how to get user_id
+  @users = User.all()
   erb(:'transactions/new')
 end
 
@@ -35,11 +38,11 @@ end
 #Update
 post '/transactions/:id' do
   @transaction = Transaction.update(params)
-  redirect(to("/transactions/#{parms[:id]}"))
+  redirect(to("/transactions/#{params[:id]}"))
 end
 
 #Delete
 post '/transactions/:id/delete' do
-  @transaction = Transaction.delete(param[:id])
+  @transaction = Transaction.delete(params[:id])
   redirect(to("/transactions"))
 end

@@ -1,0 +1,11 @@
+<h2>Edit transaction</h2>
+<form action="/transactions/<%= @transaction.id %>" method="post">
+  <label for="amount">Amount</label>
+  <input type="number" name="amount" value="<%= @transaction.amount %>">
+  <label for="memo">Memo</label>
+  <input type="text" name="memo" value="<%= @transaction.memo %>">
+  <label for="dates">Dates</label>
+  <input type="text" name="dates" value="<%= @transaction.dates %>">
+  <input type="text" style="display:none;" name="user_id" value="<%= @transaction.user_id%>">
+  <input type="submit" value="Edit transaction!">
+</form>

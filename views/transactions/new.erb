@@ -5,7 +5,12 @@
   <label for="memo">Memo</label>
   <input type="text" name="memo">
   <label for="dates">Dates</label>
-  <input type="text" name="dates">
-  <input type="text" style="display:none;" name="user_id" value="<%= @user.id%>">
+  <input type="text" name="dates">  
+  <select name="user_id">
+    <% @users.each do |user| %>
+    <option value="<%=user.id%>"><%=user.name %></option>
+    <% end %>
+  </select><br>
+  
   <input type="submit" value="Add transaction!">
 </form>

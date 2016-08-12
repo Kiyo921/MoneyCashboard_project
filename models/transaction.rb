@@ -1,6 +1,7 @@
 require('pg')
 require_relative('../db/sql_runner')
 require_relative('./user')
+
 class Transaction
   
   attr_reader(:id, :amount, :memo, :dates, :user_id)
@@ -55,12 +56,12 @@ class Transaction
 
   def self.map_items(sql) ## Can I use this in user class as well?
     transactions= SqlRunner.run(sql)
-    result = transactions.map{|transaction| User.new(transaction)}
+    result = transactions.map{|transaction| Transaction.new(transaction)}
     return result
   end
 
   def self.map_item(sql)
-    result = User.map_items(sql)
+    result = Transaction.map_items(sql)
     return result.first
   end
 end
