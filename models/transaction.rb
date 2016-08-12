@@ -3,19 +3,19 @@ require_relative('../db/sql_runner')
 require_relative('./user')
 class Transaction
   
-  attr_reader(:id, :amount, :memo, :tag, :user_id)
+  attr_reader(:id, :amount, :memo, :dates, :user_id)
 
   def initialize(options)
     @id = options['id'].to_i
     @amount = options['amount'].to_i
     @memo = options['memo']
-    @tag = options['tag']
+    @dates = options['dates'].to_i
     @user_id = options['user_id'].to_i
   end
 
   def save()
-    sql = "INSERT INTO transactions (amount, memo, tag, user_id)
-          VALUES ('#{@amount}', '#{memo}', '#{tag}', '#{user_id}') RETURNING *;"
+    sql = "INSERT INTO transactions (amount, memo, dates, user_id)
+          VALUES ('#{@amount}', '#{memo}', '#{dates}', '#{user_id}') RETURNING *;"
     transaction = SqlRunner.run(sql).first
     @id = transaction['id'] 
   end
@@ -34,7 +34,7 @@ class Transaction
   end
 
   def self.find(id)
-    sql = "SELECT * FROM transactions WHERE id = #{id}"
+    sql = "SELECT * FROM transactions WHERE id = #{id};"
     Transaction.map_item(sql)
   end
 
@@ -42,7 +42,7 @@ class Transaction
     sql = "UPDATE transactions SET
             amount = #{options['amount']},
             memo = '#{options['memo']}',
-            tag = '#{options['tag']}',
+            dates = '#{options['dates']}',
             user_id = #{options['user_id']}
             WHERE id = #{options['id']};"
     SqlRunner.run(sql)
