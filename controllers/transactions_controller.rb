@@ -20,13 +20,13 @@ end
 
 #Show
 get '/transactions/:id' do
-  @transaction = Transaction.find(params['id'])
+  @transaction = Transaction.find(params[:id])
   erb(:'transactions/show')
 end
 
 #Edit
 get '/transactions/:id/edit' do
-  @transaction = Transaction.find(params['id'])
+  @transaction = Transaction.find(params[:id])
   erb(:'transactions/edit')
 end
 
