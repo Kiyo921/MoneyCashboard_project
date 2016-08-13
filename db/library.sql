@@ -2,6 +2,7 @@ DROP TABLE tags;
 DROP TABLE merchants;
 DROP TABLE transactions;
 DROP TABLE users;
+DROP TABLE auths;
 
 CREATE TABLE users(
   id SERIAL4 PRIMARY KEY,
@@ -26,6 +27,13 @@ CREATE TABLE merchants (
   id SERIAL4 PRIMARY KEY,
   merchant_name VARCHAR(255),
   transaction_id INT4 REFERENCES transactions(id) ON DELETE CASCADE
+);
+
+CREATE TABLE auths(
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR(255)
 );
 
 
