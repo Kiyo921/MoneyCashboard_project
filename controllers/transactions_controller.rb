@@ -11,7 +11,6 @@ before '/transactions/*' do
   require_user
 end
 
-
 #Index
 get '/transactions' do
   @transactions = Transaction.all() 
