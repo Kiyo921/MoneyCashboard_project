@@ -1,5 +1,13 @@
 require_relative('../models/user')
 require('pry-byebug')
+require_relative('./application_controller')
+
+before '/users' do
+  require_user
+end
+before '/users/*' do
+  require_user
+end ### Any way I could combine them together??
 
 #Index
 get "/users" do

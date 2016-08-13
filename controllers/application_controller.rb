@@ -2,10 +2,21 @@ require_relative('../models/user')
 require('pry-byebug')
 #helper_method :current_user
 
-configure do
-  enable :sessions
-  set :session_secret, "secret" ###??? Not really sure what is going on here
+configure do #Code inside this block is run only once at startup.
+  enable :sessions #Session cookies only last for the term of a session, and are deleted when the user closes the browser.
+  set :session_secret, "secret" #Sessions are also signed while in production mode with a randomly gen- erated token to ensure that no one has been tampering with the cookie. This token can be set manually using the following setting:
 end
+#HTTP is a stateless protocol, which means that each request is independent of others. In other words, each request knows nothing about the previous or next re- quest. One way to overcome this and keep track of one request to the next is to use sessions
+
+
+def current_user 
+  @current_user ||= User.find(session[:id]) if session[:id] 
+end #This method determines whether a user is logged in or logged out. It does this by checking whether there's a user in the database with a given session id.
+
+def require_user 
+  redirect(to('/'))  unless current_user 
+end
+
 
 get '/' do
   erb :home

@@ -1,7 +1,14 @@
 require_relative('../models/transaction')
 require_relative('../models/merchant')
-require('pry-byebug')
+require_relative('./application_controller')
 
+before '/merchants' do
+  require_user
+end
+
+before '/merchants/*' do
+  require_user
+end
 #Index
 get '/merchants' do 
   @merchants = Merchant.all()

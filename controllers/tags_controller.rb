@@ -2,6 +2,16 @@ require_relative('../models/transaction')
 require_relative('../models/tag')
 require('pry-byebug')
 
+require_relative('./application_controller')
+
+before '/tags' do
+  require_user
+end
+
+before '/tags/*' do
+  require_user
+end
+
 
 #Index
 get '/tags' do

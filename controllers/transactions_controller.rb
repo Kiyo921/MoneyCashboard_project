@@ -2,6 +2,16 @@ require_relative('../models/transaction')
 require_relative('../models/user')
 require("pry-byebug")
 
+require_relative('./application_controller')
+
+before '/transactions' do
+  require_user
+end
+before '/transactions/*' do
+  require_user
+end
+
+
 #Index
 get '/transactions' do
   @transactions = Transaction.all() 

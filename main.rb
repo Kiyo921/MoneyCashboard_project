@@ -6,7 +6,6 @@ require_relative('controllers/merchants_controller')
 require_relative('controllers/tags_controller')
 require_relative('controllers/application_controller')
 
-#enable :sessions 
 
 get '/' do
   erb :home
