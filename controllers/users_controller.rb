@@ -1,4 +1,5 @@
 require_relative('../models/user')
+require('pry-byebug')
 
 #Index
 get "/users" do
@@ -19,11 +20,11 @@ post '/users' do
   redirect(to("/users"))
 end
 
-#Show
-get '/users/:id' do
-  @user = User.find(params[:id])
-  erb(:'users/show')
-end
+# #Show
+# get '/users/:id' do
+#   @user = User.find(params[:id])
+#   erb(:'users/show')
+# end
 
 #Edit
 get '/users/:id/edit' do

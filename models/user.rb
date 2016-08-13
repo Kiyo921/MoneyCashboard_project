@@ -4,15 +4,17 @@ require_relative('./transaction')
 
 class User
 
-  attr_reader(:id, :name)
+  attr_reader(:id, :name, :email, :password)
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
+    @email = options['email']
+    @password = options['password']
   end
 
   def save()
-    sql = "INSERT INTO users (name) VALUES ('#{@name}') RETURNING *;"
+    sql = "INSERT INTO users (name, email, password) VALUES ('#{@name}', '#{@email}', '#{@password}') RETURNING *;"
     user = SqlRunner.run(sql).first
     @id = user['id']
   end
@@ -35,9 +37,16 @@ class User
     User.map_item(sql)
   end
 
+  def self.find_by(email, password)
+    sql = "SELECT * FROM users WHERE email = '#{email}' AND password = '#{password}';"
+    User.map_item(sql)
+  end
+
   def self.update(options)
     sql = "UPDATE users SET
-            name = '#{options['name']}'
+            name = '#{options['name']}',
+            email = '#{options['email']}',
+            password = '#{options['password']}'
             WHERE id = #{options['id']};"
     SqlRunner.run(sql)
   end
