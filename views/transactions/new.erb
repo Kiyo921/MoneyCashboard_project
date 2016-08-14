@@ -11,6 +11,11 @@
     <option value="<%=user.id%>"><%=user.name %></option>
     <% end %>
   </select><br>
+  <select name="category_id">
+    <% @categories.each do |category| %>
+    <option value="<%=category.id%>"><%=category.category_name %></option>
+    <% end %>
+  </select><br>
   
   <input type="submit" value="Add transaction!">
 </form>

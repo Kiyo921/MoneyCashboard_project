@@ -5,7 +5,7 @@ before '/categories' do
   require_user
 end
 
-before '/users/*' do
+before '/categories/*' do
   require_user
 end
 

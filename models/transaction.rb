@@ -4,7 +4,7 @@ require_relative('./user')
 
 class Transaction
   
-  attr_reader(:id, :amount, :memo, :dates, :user_id)
+  attr_reader(:id, :amount, :memo, :dates, :user_id, :category_id)
 
   def initialize(options)
     @id = options['id'].to_i
@@ -12,11 +12,12 @@ class Transaction
     @memo = options['memo']
     @dates = options['dates'].to_i
     @user_id = options['user_id'].to_i
+    @category_id = options['category_id'].to_i
   end
 
   def save()
-    sql = "INSERT INTO transactions (amount, memo, dates, user_id)
-          VALUES ('#{@amount}', '#{memo}', '#{dates}', '#{user_id}') RETURNING *;"
+    sql = "INSERT INTO transactions (amount, memo, dates, user_id, category_id)
+          VALUES ('#{@amount}', '#{memo}', '#{dates}', '#{user_id}', '#{category_id}') RETURNING *;"
     transaction = SqlRunner.run(sql).first
     @id = transaction['id'] 
   end
@@ -44,7 +45,8 @@ class Transaction
             amount = #{options['amount']},
             memo = '#{options['memo']}',
             dates = '#{options['dates']}',
-            user_id = #{options['user_id']}
+            user_id = #{options['user_id']},
+            category_id = #{options['category_id']}
             WHERE id = #{options['id']};"
     SqlRunner.run(sql)
   end

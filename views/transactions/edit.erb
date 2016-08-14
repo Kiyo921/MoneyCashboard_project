@@ -7,5 +7,10 @@
   <label for="dates">Dates</label>
   <input type="text" name="dates" value="<%= @transaction.dates %>">
   <input type="text" style="display:none;" name="user_id" value="<%= @transaction.user_id%>">
+  <select name="category_id">
+  <% @categories.each do |category| %>
+  <option value="<%=category.id%>"><%=category.category_name %></option>
+  <% end %>
+ </select><br>
   <input type="submit" value="Edit transaction!">
 </form>

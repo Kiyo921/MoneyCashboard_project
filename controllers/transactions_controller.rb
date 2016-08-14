@@ -1,5 +1,6 @@
 require_relative('../models/transaction')
 require_relative('../models/user')
+require_relative('../models/category')
 require("pry-byebug")
 
 require_relative('./application_controller')
@@ -21,6 +22,7 @@ end
 get '/transactions/new' do
   #@user = User.find(params[:id]) 
   #Not sure how to get user_id
+  @categories = Category.all()
   @users = User.all()
   erb(:'transactions/new')
 end
@@ -40,6 +42,7 @@ end
 
 #Edit
 get '/transactions/:id/edit' do
+  @categories = Category.all()
   @transaction = Transaction.find(params[:id])
   erb(:'transactions/edit')
 end
