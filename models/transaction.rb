@@ -54,6 +54,9 @@ class Transaction
     SqlRunner.run(sql)
   end
 
+  def self.delete_all()
+  end
+
   def self.map_items(sql) ## Can I use this in user class as well?
     transactions= SqlRunner.run(sql)
     result = transactions.map{|transaction| Transaction.new(transaction)}

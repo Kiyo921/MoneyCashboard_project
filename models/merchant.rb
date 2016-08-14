@@ -42,6 +42,11 @@ class Merchant
     SqlRunner.run(sql)
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM merchants;"
+    SqlRunner.run(sql)
+  end
+
   def self.map_items(sql)
     merchants = SqlRunner.run(sql)
     result = merchants.map {|merchant| Merchant.new(merchant)}

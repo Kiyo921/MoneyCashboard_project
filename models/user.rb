@@ -29,9 +29,6 @@ class User
     User.map_items(sql)
   end
 
-  def self.delete_all() ## probably unnecessary
-  end
-
   def self.find(id)
     sql = "SELECT * FROM users WHERE id = #{id};"
     User.map_item(sql)
@@ -53,6 +50,11 @@ class User
 
   def self.delete(id)
     sql = "DELETE FROM users WHERE id = #{id};"
+    SqlRunner.run(sql)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM users;"
     SqlRunner.run(sql)
   end
 
