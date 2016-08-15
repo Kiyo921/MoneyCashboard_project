@@ -16,13 +16,37 @@
               <% @transactions.each do |transaction| %>
               Memo: <%= transaction.memo %> <br>
               Amount spent:<%= transaction.amount %> <br>
+              <a href="/transactions/<%= transaction.id %>">View details</a><br>
+              <a href="/transactions/<%= transaction.id %>/edit">Edit</a><br>
+              <form method="post" action="/transactions/<%= transaction.id %>/delete">
+              <input type="submit" value="Delete" class="btn btn-danger">
+              </form>
               <% end %>
+              <h2>Total expenditure</h2>
               <hr>
           </div>
           <div class="tab-pane active" id="panel-378256">
-            <p>
-              Howdy, I'm in Section 2.
-            </p>
+            <div class="tab-pane" id="panel-570871">
+              <form action="/transactions/category_filter" method="get">
+                <h3>Filter</h3>
+                <select name="category_id">
+                  <% @categories.each do |category| %>
+                  <option value="<%=category.id%>"><%=category.category_name %></option>
+                  <% end %>
+                </select><br>
+                <input type="submit" value="Filter" class="btn btn-primary">
+              </form>
+              <% @transactions.each do |transaction| %>
+              Memo: <%= transaction.memo %> <br>
+              Amount spent:<%= transaction.amount %> <br>
+              <a href="/transactions/<%= transaction.id %>">View details</a><br>
+              <a href="/transactions/<%= transaction.id %>/edit">Edit</a><br>
+              <form method="post" action="/transactions/<%= transaction.id %>/delete">
+              <input type="submit" value="Delete" class="btn btn-danger">
+              </form>
+              <% end %>
+              <h2>Total expenditure</h2>      
+          </div>
           </div>
         </div>
       </div>

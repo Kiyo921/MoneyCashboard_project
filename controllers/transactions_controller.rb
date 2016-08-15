@@ -14,7 +14,7 @@ end
 
 #Index
 get '/transactions' do
-  @transactions = Transaction.all() 
+  @transactions = Transaction.all()
   erb(:'transactions/index')
 end #Probably not necessary
 

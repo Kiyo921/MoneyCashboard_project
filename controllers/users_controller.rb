@@ -1,4 +1,5 @@
 require_relative('../models/user')
+require_relative('../models/category')
 require_relative('./application_controller')
 require('pry-byebug')
 
@@ -22,6 +23,7 @@ get "/users/:id" do
   # @user = User.find(params[:id])
   @current_user = current_user()
   @transactions = @current_user.transactions
+  @categories = Category.all()
   erb(:"users/index")
 end
 
