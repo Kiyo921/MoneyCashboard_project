@@ -19,7 +19,7 @@ class User
     @id = user['id']
   end
 
-  def transactions
+  def transactions()
     sql = "SELECT * FROM transactions WHERE user_id = #{@id};"
     Transaction.map_items(sql)
   end

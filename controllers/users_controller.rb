@@ -21,11 +21,28 @@ end ### Any way I could combine them together??
 #Index by user
 get "/users/:id" do
   # @user = User.find(params[:id])
+  puts "in users id"
   @current_user = current_user()
-  @transactions = @current_user.transactions
+  @transactions = @current_user.transactions()
+  @category_id = params[:category_id] && params[:category_id].to_i
+
+  if @category_id
+    @transactions = @transactions.select do |transaction|
+      transaction.category_id == @category_id
+    end
+  end
+
   @categories = Category.all()
   erb(:"users/index")
 end
+
+# Index by category and filter
+# get "/users/filter_by_category" do
+  # @current_user = current_user()
+  # @transactions = @current_user.transactions
+  # @categories = Category.all()
+  # erb(:"users/index")
+# end 
 
 #New
 get '/users/new' do
