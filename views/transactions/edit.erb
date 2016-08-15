@@ -5,7 +5,7 @@
   <label for="memo">Memo</label>
   <input type="text" name="memo" value="<%= @transaction.memo %>">
   <label for="dates">Dates</label>
-  <input type="text" name="dates" value="<%= @transaction.dates %>">
+  <input type="date" name="dates" value="<%= @transaction.dates %>">
   <input type="text" style="display:none;" name="user_id" value="<%= @transaction.user_id%>">
   <select name="category_id">
   <% @categories.each do |category| %>

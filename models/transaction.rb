@@ -10,7 +10,7 @@ class Transaction
     @id = options['id'].to_i
     @amount = options['amount'].to_i
     @memo = options['memo']
-    @dates = options['dates'].to_i
+    @dates = options['dates'] 
     @user_id = options['user_id'].to_i
     @category_id = options['category_id'].to_i
     @merchant_id = options['merchant_id'].to_i

@@ -1,5 +1,6 @@
 require_relative('../models/user')
 require_relative('../models/category')
+require_relative('../models/analysis')
 require_relative('./application_controller')
 require('pry-byebug')
 
@@ -21,14 +22,13 @@ end ### Any way I could combine them together??
 #Index by user
 get "/users/:id" do
   # @user = User.find(params[:id])
-  puts "in users id"
   @current_user = current_user()
   @transactions = @current_user.transactions()
-  @category_id = params[:category_id] && params[:category_id].to_i
-  if @category_id
-    @transactions = @transactions.select do |transaction|
-      transaction.category_id == @category_id
-    end
+  @analysis = Analysis.new( @transactions )
+
+  category_id = params[:category_id] && params[:category_id].to_i
+  if category_id
+    @transactions = @analysis.filter_by_category( category_id )
   end
 
   @categories = Category.all()

@@ -7,12 +7,8 @@ require('pry-byebug')
 class Analysis
   attr_reader(:users, :transactions, :merchants, :categories)
 
-  def initialize ()
-    @users = User.all
-    @transactions = Transaction.all
-    @merchants = Merchant.all
-    @categories = Category.all
-    # user1.transactions 
+  def initialize( transactions )
+    @transactions = transactions
   end
 
   def total_expenditure
@@ -24,8 +20,15 @@ class Analysis
     return total
   end
 
-  def total_expenditure_by_category
-    
+  def filter_by_category( category_id )
+    @transactions = @transactions.select do |transaction|
+      transaction.category_id == category_id
+    end
+    return @transactions
+  end
+
+  def total()
+    return @transactions.reduce(0) { | sum, t | sum + t.amount }
   end
 
   def total_expenditure_by_date

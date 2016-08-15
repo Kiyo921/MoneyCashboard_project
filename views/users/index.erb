@@ -27,8 +27,8 @@
           </div>
           <div class="tab-pane active" id="panel-378256">
             <div class="tab-pane" id="panel-570871">
+            <h3>Filter</h3>
               <form action="/users/filter_by_category" method="get">
-                <h3>Filter</h3>
                 <select name="category_id">
                   <% @categories.each do |category| %>
                   <% if @category_id == category.id %>
@@ -38,7 +38,19 @@
                   <% end %>
                   <% end %>
                 </select><br>
-                <input type="submit" value="Filter" class="btn btn-primary">
+                <input type="submit" value="By Category" class="btn btn-primary">
+              </form>
+              <form action="/users/filter_by_category" method="get">
+                <select name="category_id">
+                  <% @categories.each do |category| %>
+                  <% if @category_id == category.id %>
+                  <option value="<%=category.id%>" selected="selected"><%=category.category_name %></option>
+                  <% else  %>
+                  <option value="<%=category.id%>"><%=category.category_name %></option>
+                  <% end %>
+                  <% end %>
+                </select><br>
+                <input type="submit" value="By Category" class="btn btn-primary">
               </form>
               <% @transactions.each do |transaction| %>
               Memo: <%= transaction.memo %> <br>
@@ -49,7 +61,8 @@
               <input type="submit" value="Delete" class="btn btn-danger">
               </form>
               <% end %>
-              <h2>Total expenditure</h2>      
+              <h2>Total expenditure</h2> 
+              <%= @analysis.total() %>     
           </div>
           </div>
         </div>
