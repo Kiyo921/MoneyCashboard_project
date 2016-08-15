@@ -59,6 +59,6 @@ end
 
 #Delete
 post '/transactions/:id/delete' do
-  @transaction = Transaction.delete(params[:id])
+  Transaction.delete(params[:id])
   redirect(to("/transactions"))
 end
