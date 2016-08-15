@@ -5,12 +5,9 @@
   <label for="memo">Memo</label>
   <input type="text" name="memo">
   <label for="dates">Dates</label>
-  <input type="text" name="dates">  
-  <select name="user_id">
-    <% @users.each do |user| %>
-    <option value="<%=user.id%>"><%=user.name %></option>
-    <% end %>
-  </select><br>
+  <input type="text" name="dates">
+  <label for="user_id">User Id</label>
+  <input type="text" name="user_id" value="<%= @user.id%>">
   <select name="category_id">
     <% @categories.each do |category| %>
     <option value="<%=category.id%>"><%=category.category_name %></option>

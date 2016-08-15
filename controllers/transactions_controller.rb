@@ -22,8 +22,12 @@ end #Probably not necessary
 get '/transactions/new' do
   #@user = User.find(params[:id]) 
   #Not sure how to get user_id
+  # binding.pry
+  @current_user = current_user()
   @categories = Category.all()
-  @users = User.all()
+  @user = User.find(@current_user.id)
+
+  #@users = User.all()
   erb(:'transactions/new')
 end
 
