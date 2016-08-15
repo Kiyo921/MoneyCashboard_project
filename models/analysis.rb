@@ -37,8 +37,4 @@ class Analysis
   def total()
     return @transactions.reduce(0) { | sum, t | sum + t.amount }
   end
-
-  def total_expenditure_by_date
-  end
-
 end

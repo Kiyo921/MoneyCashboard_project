@@ -48,6 +48,7 @@ end
 #Edit
 get '/transactions/:id/edit' do
   @categories = Category.all()
+  @merchants = Merchant.all()
   @transaction = Transaction.find(params[:id])
   erb(:'transactions/edit')
 end
@@ -55,11 +56,11 @@ end
 #Update
 post '/transactions/:id' do
   @transaction = Transaction.update(params)
-  redirect(to("/transactions/#{params[:id]}"))
+  redirect(to("/users/index"))
 end
 
 #Delete
 post '/transactions/:id/delete' do
   Transaction.delete(params[:id])
-  redirect(to("/transactions"))
+  redirect(to("/users/index"))
 end

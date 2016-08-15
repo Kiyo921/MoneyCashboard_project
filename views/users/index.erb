@@ -2,31 +2,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <div class="tabbable" id="tabs-839710">
-        <ul class="nav nav-tabs">
-          <li>
-            <a href="#panel-570871" data-toggle="tab">All Transaction by time</a>
-          </li>
-          <li>
-            <a href="#panel-378256" data-toggle="tab">All Transaction by tag</a>
-          </li>
-        </ul>
-        <!-- <div class="tab-content">
-          <div class="tab-pane" id="panel-570871">
-              <% @transactions.each do |transaction| %>
-              Memo: <%= transaction.memo %> <br>
-              Amount spent:<%= transaction.amount %> <br>
-              <a href="/transactions/<%= transaction.id %>">View details</a><br>
-              <a href="/transactions/<%= transaction.id %>/edit">Edit</a><br>
-              <form method="post" action="/transactions/<%= transaction.id %>/delete">
-              <input type="submit" value="Delete" class="btn btn-danger">
-              </form>
-              <hr>
-              <% end %>
-              <h2>Total expenditure</h2>
-          </div> -->
-          <div class="tab-pane active" id="panel-378256">
-            <div class="tab-pane" id="panel-570871">
+      <div class="tabbable" id="tabs-839710">  
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
             <h3>Filter</h3>
               <form action="/users/filter_by_category" method="get">
                 <select name="category_id">
@@ -52,19 +31,62 @@
                 </select><br>
                 <input type="submit" value="By Store" class="btn btn-primary">
               </form>
-              <% @transactions.each do |transaction| %>
-              Memo: <%= transaction.memo %> <br>
-              Amount spent:<%= transaction.amount %> <br>
-              Dates:<%= transaction.dates %> <br>
-              <a href="/transactions/<%= transaction.id %>">View details</a><br>
-              <a href="/transactions/<%= transaction.id %>/edit">Edit</a><br>
-              <form method="post" action="/transactions/<%= transaction.id %>/delete">
-              <input type="submit" value="Delete" class="btn btn-danger">
-              </form>
-              <% end %>
+
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>
+                      Date
+                    </th>
+                    <th>
+                      Amount
+                    </th>
+                    <th>
+                      Category
+                    </th>
+                    <th>
+                      Store
+                    </th>
+                    <th>
+                      Memo
+                    </th>
+                  </tr>
+                </thead>
+                <% @transactions.each do |transaction| %>    
+                <tbody>
+                  <tr>
+                    <td>
+                      <%= transaction.dates %>
+                    </td>
+                    <td>
+                      £<%= transaction.amount %>
+                    </td>
+                    <td>
+                      category to come here
+                    </td>
+                    <td>
+                      store to come here
+                    </td>
+                    <td>
+                      <%= transaction.memo %>
+                    </td>
+                    <td>
+                      <a href="/transactions/<%= transaction.id %>/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                    </td>
+                    <td>
+                      <form method="post" action="/transactions/<%= transaction.id %>/delete">
+                      <i class="fa fa-times" aria-hidden="true"><input type="submit" value="Delete"></i>   
+                      </form>
+                    </td>  
+                  </tr>
+                </tbody>
+                <% end %>
+              </table>
               <h2>Total expenditure</h2> 
-              <%= @analysis.total() %>     
+              £<%= @analysis.total() %> 
+            </div>
           </div>
+        </div> 
           </div>
         </div>
       </div>

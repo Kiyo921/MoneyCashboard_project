@@ -13,7 +13,7 @@
   <% end %>
  </select><br>
   <select name="merchant_id">
-  <% @merchant.each do |merchant| %>
+  <% @merchants.each do |merchant| %>
   <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
   <% end %>
  </select><br>
