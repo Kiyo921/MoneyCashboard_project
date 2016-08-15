@@ -32,6 +32,7 @@ get "/users/:id" do
   end
 
   @categories = Category.all()
+  @merchants = Merchant.all()
   erb(:"users/index")
 end
 

@@ -40,17 +40,17 @@
                 </select><br>
                 <input type="submit" value="By Category" class="btn btn-primary">
               </form>
-              <form action="/users/filter_by_category" method="get">
-                <select name="category_id">
-                  <% @categories.each do |category| %>
-                  <% if @category_id == category.id %>
-                  <option value="<%=category.id%>" selected="selected"><%=category.category_name %></option>
+              <form action="/users/filter_by_merchant" method="get">
+                <select name="merchant_id">
+                  <% @merchants.each do |merchant| %>
+                  <% if @merchant_id == merchant.id %>
+                  <option value="<%=merchant.id%>" selected="selected"><%=merchant.merchant_name %></option>
                   <% else  %>
-                  <option value="<%=category.id%>"><%=category.category_name %></option>
+                  <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
                   <% end %>
                   <% end %>
                 </select><br>
-                <input type="submit" value="By Category" class="btn btn-primary">
+                <input type="submit" value="By Store" class="btn btn-primary">
               </form>
               <% @transactions.each do |transaction| %>
               Memo: <%= transaction.memo %> <br>

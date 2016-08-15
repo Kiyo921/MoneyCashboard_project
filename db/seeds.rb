@@ -7,6 +7,7 @@ require_relative('../models/merchant')
 User.delete_all()
 Category.delete_all()
 Transaction.delete_all()
+Merchant.delete_all()
 
 user1 = User.new({'name' => 'user1', 'email' => 'user1@gmail.com', 'password' => 'user1'})
 user2 = User.new({'name' => 'user2', 'email' => 'user2@gmail.com', 'password' => 'user2'})
