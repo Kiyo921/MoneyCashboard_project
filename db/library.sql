@@ -1,7 +1,8 @@
-DROP TABLE merchants;
-DROP TABLE transactions;
-DROP TABLE categories;
-DROP TABLE users;
+DROP TABLE users CASCADE;
+DROP TABLE merchants CASCADE;
+DROP TABLE categories CASCADE;
+DROP TABLE transactions CASCADE;
+
 
 CREATE TABLE users(
   id SERIAL4 PRIMARY KEY,
@@ -16,18 +17,19 @@ CREATE TABLE categories(
   logo VARCHAR(255)
 );
 
+CREATE TABLE merchants (
+  id SERIAL4 PRIMARY KEY,
+  merchant_name VARCHAR(255)
+);
+
 CREATE TABLE transactions(
   id SERIAL4 PRIMARY KEY,
   amount INT4,
   memo VARCHAR(255),
   dates VARCHAR(255), 
   user_id INT4 REFERENCES users(id) ON DELETE CASCADE,
-  category_id INT4 REFERENCES categories(id) ON DELETE CASCADE
+  category_id INT4 REFERENCES categories(id) ON DELETE CASCADE,
+  merchant_id INT4 REFERENCES merchants(id) ON DELETE CASCADE
 );
 
-CREATE TABLE merchants (
-  id SERIAL4 PRIMARY KEY,
-  merchant_name VARCHAR(255),
-  transaction_id INT4 REFERENCES transactions(id) ON DELETE CASCADE
-);
 

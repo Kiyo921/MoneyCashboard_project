@@ -25,6 +25,7 @@ get '/transactions/new' do
   # binding.pry
   @current_user = current_user()
   @categories = Category.all()
+  @merchants = Merchant.all()
   @user = User.find(@current_user.id)
 
   #@users = User.all()

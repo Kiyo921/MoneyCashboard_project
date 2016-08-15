@@ -3,15 +3,14 @@ require_relative('../db/sql_runner')
 require_relative('./transaction')
 
 class Merchant
-  attr_reader(:id, :merchant_name, :transaction_id)
+  attr_reader(:id, :merchant_name)
   def initialize(options)
     @id = options['id'].to_i
     @merchant_name = options['merchant_name']
-    @transaction_id = options['transaction_id'].to_i
   end
 
   def save()
-    sql = "INSERT INTO merchants (merchant_name, transaction_id) VALUES ('#{@merchant_name}', '#{@transaction_id}') RETURNING *;"
+    sql = "INSERT INTO merchants (merchant_name) VALUES ('#{@merchant_name}') RETURNING *;"
     merchant = SqlRunner.run(sql).first
     @id = merchant['id']
   end
@@ -26,13 +25,9 @@ class Merchant
     Merchant.map_item(sql)
   end
 
-  def transactions()
-  end
-
   def self.update(options)
     sql = "UPDATE merchants SET
-          merchant_name = '#{options['merchant_name']}',
-          transaction_id = #{options['transaction_id']}
+          merchant_name = '#{options['merchant_name']}'
           WHERE id = #{options['id']};"
     SqlRunner.run(sql)
   end

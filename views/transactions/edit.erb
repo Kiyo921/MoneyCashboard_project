@@ -12,5 +12,10 @@
   <option value="<%=category.id%>"><%=category.category_name %></option>
   <% end %>
  </select><br>
+  <select name="merchant_id">
+  <% @merchant.each do |merchant| %>
+  <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
+  <% end %>
+ </select><br>
   <input type="submit" value="Edit transaction!">
 </form>
