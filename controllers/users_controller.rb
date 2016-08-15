@@ -1,5 +1,6 @@
 require_relative('../models/user')
 require_relative('./application_controller')
+require('pry-byebug')
 
 before '/users' do
   require_user
@@ -9,11 +10,19 @@ before '/users/*' do
   require_user
 end ### Any way I could combine them together??
 
-#Index
-get "/users" do
-  @users = User.all
+# #Index
+# get "/users" do
+#   @users = User.all
+#   erb(:"users/index")
+#   ## Probably not necessary
+# end
+
+#Index by user
+get "/users/:id" do
+  # @user = User.find(params[:id])
+  @current_user = current_user()
+  @transactions = @current_user.transactions
   erb(:"users/index")
-  ## Probably not necessary
 end
 
 #New
@@ -27,6 +36,8 @@ post '/users' do
   @user.save
   redirect(to("/users"))
 end
+
+ # same as register
 
 # #Show
 # get '/users/:id' do

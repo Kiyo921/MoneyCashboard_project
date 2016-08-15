@@ -21,7 +21,7 @@ class User
 
   def transactions
     sql = "SELECT * FROM transactions WHERE user_id = #{@id};"
-    User.map_items(sql)
+    Transaction.map_items(sql)
   end
 
   def self.all()

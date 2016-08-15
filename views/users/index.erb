@@ -1,5 +1,30 @@
-<div>
-  <% @users.each do |user| %>
-  Name: <%= user.name %> <br>
-  <% end %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tabbable" id="tabs-839710">
+        <ul class="nav nav-tabs">
+          <li>
+            <a href="#panel-570871" data-toggle="tab">All Transaction by time</a>
+          </li>
+          <li>
+            <a href="#panel-378256" data-toggle="tab">All Transaction by tag</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" id="panel-570871">
+              <% @transactions.each do |transaction| %>
+              Memo: <%= transaction.memo %> <br>
+              Amount spent:<%= transaction.amount %> <br>
+              <% end %>
+          </div>
+          <div class="tab-pane active" id="panel-378256">
+            <p>
+              Howdy, I'm in Section 2.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

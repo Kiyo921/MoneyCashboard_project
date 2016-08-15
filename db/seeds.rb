@@ -27,10 +27,10 @@ daily_goods.save
 transport.save
 socializing.save
 
-transaction1 = Transaction.new('amount' => 100, 'memo' => 'Food', 'dates' => 'Yesterday', 'user_id' => 1, 'category_id' => 1)
-transaction2 = Transaction.new('amount' => 100, 'memo' => 'Daily goods', 'dates' => 'Yesterday', 'user_id' => 1, 'category_id' => 2)
-transaction3 = Transaction.new('amount' => 100, 'memo' => 'Transport', 'dates' => 'Yesterday', 'user_id' => 1, 'category_id' => 3)
-transaction4 = Transaction.new('amount' => 100, 'memo' => 'Socializing', 'dates' => 'Yesterday', 'user_id' => 1, 'category_id' => 4)
+transaction1 = Transaction.new('amount' => 100, 'memo' => 'Food', 'dates' => 'Yesterday', 'user_id' => user1.id, 'category_id' => food.id)
+transaction2 = Transaction.new('amount' => 100, 'memo' => 'Daily goods', 'dates' => 'Yesterday', 'user_id' => user1.id, 'category_id' => daily_goods.id)
+transaction3 = Transaction.new('amount' => 100, 'memo' => 'Transport', 'dates' => 'Yesterday', 'user_id' => user1.id, 'category_id' => transport.id)
+transaction4 = Transaction.new('amount' => 100, 'memo' => 'Socializing', 'dates' => 'Yesterday', 'user_id' => user2.id, 'category_id' => socializing.id)
 
 transaction1.save
 transaction2.save
