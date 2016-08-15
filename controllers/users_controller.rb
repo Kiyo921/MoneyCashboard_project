@@ -26,12 +26,15 @@ get "/users/:id" do
   @transactions = @current_user.transactions()
   @analysis = Analysis.new( @transactions )
 
-  category_id = params[:category_id] && params[:category_id].to_i
-  if category_id
-    @transactions = @analysis.filter_by_category( category_id )
+  @category_id = params[:category_id] && params[:category_id].to_i
+  if @category_id
+    @transactions = @analysis.filter_by_category( @category_id )
   end
-
   @categories = Category.all()
+  @merchant_id = params[:merchant_id] && params[:merchant_id].to_i
+  if @merchant_id
+    @transactions = @analysis.filter_by_merchant( @merchant_id )
+  end
   @merchants = Merchant.all()
   erb(:"users/index")
 end

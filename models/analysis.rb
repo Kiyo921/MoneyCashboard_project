@@ -27,12 +27,12 @@ class Analysis
     return @transactions
   end
 
-  # def filter_by_merchant(merchant_id)
-  #   @transactions = @transactions.select do |transaction|
-  #     transaction.merchant_id == merchant_id
-  #   end
-  #   return @transactions
-  # end
+  def filter_by_merchant(merchant_id)
+    @transactions = @transactions.select do |transaction|
+      transaction.merchant_id == merchant_id
+    end
+    return @transactions
+  end
 
   def total()
     return @transactions.reduce(0) { | sum, t | sum + t.amount }
