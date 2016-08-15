@@ -25,7 +25,6 @@ get "/users/:id" do
   @current_user = current_user()
   @transactions = @current_user.transactions()
   @category_id = params[:category_id] && params[:category_id].to_i
-
   if @category_id
     @transactions = @transactions.select do |transaction|
       transaction.category_id == @category_id
