@@ -1,4 +1,3 @@
-DROP TABLE tags;
 DROP TABLE merchants;
 DROP TABLE transactions;
 DROP TABLE categories;
@@ -24,12 +23,6 @@ CREATE TABLE transactions(
   dates VARCHAR(255), 
   user_id INT4 REFERENCES users(id) ON DELETE CASCADE,
   category_id INT4 REFERENCES categories(id) ON DELETE CASCADE
-);
-
-CREATE TABLE tags(
-  id SERIAL4 PRIMARY KEY,
-  tag_name VARCHAR(255),
-  transaction_id INT4 REFERENCES transactions(id) ON DELETE CASCADE
 );
 
 CREATE TABLE merchants (
