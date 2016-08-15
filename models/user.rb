@@ -20,7 +20,7 @@ class User
   end
 
   def transactions()
-    sql = "SELECT * FROM transactions WHERE user_id = #{@id};"
+    sql = "SELECT * FROM transactions WHERE user_id = #{@id} ORDER BY dates DESC;"
     Transaction.map_items(sql)
   end
 

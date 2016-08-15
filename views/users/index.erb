@@ -11,7 +11,7 @@
             <a href="#panel-378256" data-toggle="tab">All Transaction by tag</a>
           </li>
         </ul>
-        <div class="tab-content">
+        <!-- <div class="tab-content">
           <div class="tab-pane" id="panel-570871">
               <% @transactions.each do |transaction| %>
               Memo: <%= transaction.memo %> <br>
@@ -24,7 +24,7 @@
               <hr>
               <% end %>
               <h2>Total expenditure</h2>
-          </div>
+          </div> -->
           <div class="tab-pane active" id="panel-378256">
             <div class="tab-pane" id="panel-570871">
             <h3>Filter</h3>
@@ -55,6 +55,7 @@
               <% @transactions.each do |transaction| %>
               Memo: <%= transaction.memo %> <br>
               Amount spent:<%= transaction.amount %> <br>
+              Dates:<%= transaction.dates %> <br>
               <a href="/transactions/<%= transaction.id %>">View details</a><br>
               <a href="/transactions/<%= transaction.id %>/edit">Edit</a><br>
               <form method="post" action="/transactions/<%= transaction.id %>/delete">

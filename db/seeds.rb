@@ -39,9 +39,9 @@ boots.save
 sainsbary.save
 hmsmith.save
 
-transaction1 = Transaction.new('amount' => 100, 'memo' => 'Food', 'dates' => '12-12-2016', 'user_id' => user1.id, 'category_id' => food.id, 'merchant_id' =>tesco.id)
-transaction2 = Transaction.new('amount' => 100, 'memo' => 'Daily goods', 'dates' => '12-12-2016', 'user_id' => user1.id, 'category_id' => daily_goods.id, 'merchant_id' =>tesco.id)
-transaction3 = Transaction.new('amount' => 100, 'memo' => 'Transport', 'dates' => '12-12-2016', 'user_id' => user1.id, 'category_id' => transport.id, 'merchant_id' =>tesco.id)
+transaction1 = Transaction.new('amount' => 100, 'memo' => 'Food', 'dates' => '12-10-2016', 'user_id' => user1.id, 'category_id' => food.id, 'merchant_id' =>tesco.id)
+transaction2 = Transaction.new('amount' => 100, 'memo' => 'Daily goods', 'dates' => '12-11-2016', 'user_id' => user1.id, 'category_id' => daily_goods.id, 'merchant_id' =>tesco.id)
+transaction3 = Transaction.new('amount' => 100, 'memo' => 'Transport', 'dates' => '12-09-2016', 'user_id' => user1.id, 'category_id' => transport.id, 'merchant_id' =>tesco.id)
 transaction4 = Transaction.new('amount' => 100, 'memo' => 'Socializing', 'dates' => '12-12-2016', 'user_id' => user2.id, 'category_id' => socializing.id, 'merchant_id' =>tesco.id)
 
 transaction1.save

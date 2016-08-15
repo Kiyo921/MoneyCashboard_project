@@ -29,7 +29,7 @@ class Transaction
   def self.all()
     sql = "SELECT * FROM transactions;"
     Transaction.map_items(sql)
-  end
+  end # Probably not necessary
 
   def self.delete_all()
     sql = "DELETE FROM transactions;"
@@ -56,9 +56,6 @@ class Transaction
   def self.delete(id)
     sql = "DELETE FROM transactions WHERE id = #{id};"
     SqlRunner.run(sql)
-  end
-
-  def self.delete_all()
   end
 
   def self.map_items(sql) ## Can I use this in user class as well?
