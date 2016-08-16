@@ -39,6 +39,11 @@ post '/transactions' do
   redirect(to("/transactions"))
 end
 
+#Show Analysis page
+get '/transactions/analysis' do
+  erb(:'/transactions/analysis')
+end
+
 #Show
 get '/transactions/:id' do
   @transaction = Transaction.find(params[:id])
@@ -64,3 +69,5 @@ post '/transactions/:id/delete' do
   Transaction.delete(params[:id])
   redirect(to("/users/index"))
 end
+
+

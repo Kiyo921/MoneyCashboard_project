@@ -7,6 +7,11 @@
           <div class="row">
             <div class="col-md-12">
             <h3>Filter</h3>
+              <form action="/users/filter_by_date" method="get">
+                From:<input type="date" name="start_date">
+                To:<input type="date" name="end_date">
+                <input type="submit" value="Sort by time" class="btn btn-primary">
+              </form>
               <form action="/users/filter_by_category" method="get">
                 <select name="category_id">
                   <% @categories.each do |category| %>
@@ -22,22 +27,15 @@
               <form action="/users/filter_by_merchant" method="get">
                 <select name="merchant_id">
                   <% @merchants.each do |merchant| %>
-                  <% if @merchant_id == merchant.id %>
-                  <option value="<%=merchant.id%>" selected="selected"><%=merchant.merchant_name %></option>
-                  <% else  %>
-                  <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
-                  <% end %>
+                    <% if @merchant_id == merchant.id %>
+                    <option value="<%=merchant.id%>" selected="selected"><%=merchant.merchant_name %></option>
+                    <% else  %>
+                    <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
+                    <% end %>
                   <% end %>
                 </select>
                 <input type="submit" value="By Store" class="btn btn-primary">
               </form>
-              <form action="/users/filter_by_date" method="get">
-                From:<input type="date" name="from_date">
-                To:<input type="date" name="to_date">
-                <input type="submit" value="Sort by time" class="btn btn-primary">
-              </form>
-
-
               <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -88,8 +86,7 @@
                 </tbody>
                 <% end %>
               </table>
-              <h2>Total expenditure</h2> 
-              £<%= @analysis.total() %> 
+              <h4>Total expenditure: £<%= @analysis.total() %></h4> 
             </div>
           </div>
         </div> 

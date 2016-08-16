@@ -35,7 +35,10 @@ class Analysis
   end
 
   def filter_by_date( start_date, end_date )
-    
+    @transactions = @transactions.select do |transaction|
+      transaction.dates >= start_date && transaction.dates <= end_date
+    end
+    return @transactions
   end
 
   def total()

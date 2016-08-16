@@ -1,6 +1,9 @@
 <div>
-  <h1>User detail</h1>
+  <h1>Account Summary</h1>
   <h2>Name <%= @user.name %></h2>
+  <form action="/users/<%= @user.id %>/edit" method="get" >
+    <input type="submit" value="Edit">
+  </form>
   <form action="/users/<%= @user.id %>/delete" method="post" >
     <input type="submit" value="Delete">
   </form>

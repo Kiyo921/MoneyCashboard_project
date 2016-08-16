@@ -16,10 +16,6 @@ class Category
     @id = category['id']
   end
 
-  def transactions()
-
-  end
-
   def self.all()
     sql = "SELECT * FROM categories;"
     Category.map_items(sql)

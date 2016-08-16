@@ -14,11 +14,14 @@
     <option value="<%=category.id%>"><%=category.category_name %></option>
     <% end %>
   </select><br>
+  <a href="/categories/new">Add new category => </a>
+  <h3>Store</h3>
   <select name="merchant_id">
     <% @merchants.each do |merchant| %>
     <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
     <% end %>
   </select><br>
+  <a href="/merchants/new">Add new store => </a><br>  
   
   <input type="submit" value="Add transaction!">
 </form>

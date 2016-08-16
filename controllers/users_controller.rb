@@ -31,27 +31,20 @@ get "/users/:id" do
     @transactions = @analysis.filter_by_category( @category_id )
   end
   @categories = Category.all()
+  
   @merchant_id = params[:merchant_id] && params[:merchant_id].to_i
   if @merchant_id
     @transactions = @analysis.filter_by_merchant( @merchant_id )
   end
   @merchants = Merchant.all()
 
-  # @transactions = @analysis.filter_by_date( params[:start_date], params[:end_date] )
-  
+  date_sort = params[:start_date] && params[:end_date]
+  if date_sort
+    @transactions = @analysis.filter_by_date( params[:start_date], params[:end_date] )
+  end
 
-  ##Add sort by date here
-  
   erb(:"users/index")
 end
-
-# Index by category and filter
-# get "/users/filter_by_category" do
-  # @current_user = current_user()
-  # @transactions = @current_user.transactions
-  # @categories = Category.all()
-  # erb(:"users/index")
-# end 
 
 #New
 get '/users/new' do
@@ -67,11 +60,11 @@ end
 
  # same as register
 
-# #Show
-# get '/users/:id' do
-#   @user = User.find(params[:id])
-#   erb(:'users/show')
-# end
+#Show
+get '/users/:id/show' do
+  @user = User.find(params[:id])
+  erb(:'users/show')
+end
 
 #Edit
 get '/users/:id/edit' do
