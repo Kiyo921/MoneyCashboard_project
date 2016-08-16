@@ -58,7 +58,7 @@
                     </th>
                   </tr>
                 </thead>
-                <% @transactions.each do |transaction| %>    
+                <% @transactions.each do |transaction| %> 
                 <tbody>
                   <tr>
                     <td>
@@ -68,10 +68,10 @@
                       £<%= transaction.amount %>
                     </td>
                     <td>
-                      category to come here
+                      <%= transaction.category.category_name  %>
                     </td>
                     <td>
-                      store to come here
+                      <%= transaction.merchant.merchant_name  %>
                     </td>
                     <td>
                       <%= transaction.memo %>

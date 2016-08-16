@@ -34,6 +34,10 @@ class Analysis
     return @transactions
   end
 
+  def filter_by_date( start_date, end_date )
+    
+  end
+
   def total()
     return @transactions.reduce(0) { | sum, t | sum + t.amount }
   end

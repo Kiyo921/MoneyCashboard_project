@@ -1,6 +1,8 @@
 require('pg')
 require_relative('../db/sql_runner')
 require_relative('./user')
+require_relative('./merchant')
+require_relative('./category')
 
 class Transaction
   
@@ -23,7 +25,14 @@ class Transaction
     @id = transaction['id'] 
   end
 
-  def user ### necessary??
+  def category
+    sql = "SELECT * FROM categories WHERE id = #{@category_id};"
+    Category.map_item(sql)
+  end
+
+  def merchant
+    sql = "SELECT * FROM merchants WHERE id = #{@merchant_id};"
+    Merchant.map_item(sql)
   end
 
   def self.all()

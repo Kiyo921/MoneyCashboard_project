@@ -37,6 +37,9 @@ get "/users/:id" do
   end
   @merchants = Merchant.all()
 
+  # @transactions = @analysis.filter_by_date( params[:start_date], params[:end_date] )
+  
+
   ##Add sort by date here
   
   erb(:"users/index")

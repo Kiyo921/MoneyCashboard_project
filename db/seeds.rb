@@ -19,7 +19,7 @@ user2.save
 user3.save
 user4.save
 
-food = Category.new('category_name' => 'Food', 'logo' => 'Food' )
+food = Category.new('category_name' => 'Food', 'logo' => '<i class="fa fa-user-times" aria-hidden="true"></i>' )
 daily_goods = Category.new('category_name' => 'Daily goods', 'logo' => 'Daily goods' )
 transport = Category.new('category_name' => 'Transport', 'logo' => 'Transport' )
 socializing = Category.new('category_name' => 'Socializing', 'logo' => 'Socializing' )
