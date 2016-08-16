@@ -50,6 +50,7 @@ class Analysis
     (transaction/@total.to_f) * 100
   end
 
+  # TODO:This method will be used once JS pie chart is added 
   def total_360_degree(transaction)
     percent(transaction) * 360/100
   end
