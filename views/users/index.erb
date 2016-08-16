@@ -16,7 +16,7 @@
                   <option value="<%=category.id%>"><%=category.category_name %></option>
                   <% end %>
                   <% end %>
-                </select><br>
+                </select>
                 <input type="submit" value="By Category" class="btn btn-primary">
               </form>
               <form action="/users/filter_by_merchant" method="get">
@@ -28,9 +28,15 @@
                   <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
                   <% end %>
                   <% end %>
-                </select><br>
+                </select>
                 <input type="submit" value="By Store" class="btn btn-primary">
               </form>
+              <form action="/users/filter_by_date" method="get">
+                From:<input type="date" name="from_date">
+                To:<input type="date" name="to_date">
+                <input type="submit" value="Sort by time" class="btn btn-primary">
+              </form>
+
 
               <table class="table table-bordered">
                 <thead>

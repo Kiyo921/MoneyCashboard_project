@@ -23,11 +23,33 @@ food = Category.new('category_name' => 'Food', 'logo' => 'Food' )
 daily_goods = Category.new('category_name' => 'Daily goods', 'logo' => 'Daily goods' )
 transport = Category.new('category_name' => 'Transport', 'logo' => 'Transport' )
 socializing = Category.new('category_name' => 'Socializing', 'logo' => 'Socializing' )
+hobbies = Category.new('category_name' => 'Hobbies', 'logo' => 'Hobbies' )
+education = Category.new('category_name' => 'Education', 'logo' => 'Education' )
+fashion = Category.new('category_name' => 'Fashion', 'logo' => 'Fashion' )
+medical = Category.new('category_name' => 'Medical', 'logo' => 'Medical' )
+phone_internet = Category.new('category_name' => 'Phone, Internet', 'logo' => 'Phone, Internet' )
+utilities = Category.new('category_name' => 'Utilities', 'logo' => 'Utilities' )
+home = Category.new('category_name' => 'Home', 'logo' => 'Home' )
+automobile = Category.new('category_name' => 'Automobile', 'logo' => 'Automobile' )
+taxes = Category.new('category_name' => 'Taxes', 'logo' => 'Taxes' )
+big_outlay = Category.new('category_name' => 'Big outlay', 'logo' => 'Big outlay' )
+other = Category.new('category_name' => 'Other', 'logo' => 'Other' )
 
 food.save
 daily_goods.save
 transport.save
 socializing.save
+hobbies.save
+education.save
+fashion.save
+medical.save
+phone_internet.save
+utilities.save
+home.save
+automobile.save
+taxes.save
+big_outlay.save
+other.save
 
 tesco = Merchant.new('merchant_name' => 'Tesco', 'logo' => 'tesco' )
 boots = Merchant.new('merchant_name' => 'Boots', 'logo' => 'boots' )
