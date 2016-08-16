@@ -19,21 +19,21 @@ user2.save
 user3.save
 user4.save
 
-food = Category.new('category_name' => 'Food', 'logo' => '<i class="fa fa-user-times" aria-hidden="true"></i>' )
-daily_goods = Category.new('category_name' => 'Daily goods', 'logo' => 'Daily goods' )
-transport = Category.new('category_name' => 'Transport', 'logo' => 'Transport' )
-socializing = Category.new('category_name' => 'Socializing', 'logo' => 'Socializing' )
-hobbies = Category.new('category_name' => 'Hobbies', 'logo' => 'Hobbies' )
-education = Category.new('category_name' => 'Education', 'logo' => 'Education' )
-fashion = Category.new('category_name' => 'Fashion', 'logo' => 'Fashion' )
-medical = Category.new('category_name' => 'Medical', 'logo' => 'Medical' )
-phone_internet = Category.new('category_name' => 'Phone, Internet', 'logo' => 'Phone, Internet' )
-utilities = Category.new('category_name' => 'Utilities', 'logo' => 'Utilities' )
-home = Category.new('category_name' => 'Home', 'logo' => 'Home' )
-automobile = Category.new('category_name' => 'Automobile', 'logo' => 'Automobile' )
-taxes = Category.new('category_name' => 'Taxes', 'logo' => 'Taxes' )
-big_outlay = Category.new('category_name' => 'Big outlay', 'logo' => 'Big outlay' )
-other = Category.new('category_name' => 'Other', 'logo' => 'Other' )
+food = Category.new('category_name' => 'Food')
+daily_goods = Category.new('category_name' => 'Daily goods')
+transport = Category.new('category_name' => 'Transport')
+socializing = Category.new('category_name' => 'Socializing')
+hobbies = Category.new('category_name' => 'Hobbies')
+education = Category.new('category_name' => 'Education')
+fashion = Category.new('category_name' => 'Fashion')
+medical = Category.new('category_name' => 'Medical')
+phone_internet = Category.new('category_name' => 'Phone, Internet')
+utilities = Category.new('category_name' => 'Utilities')
+home = Category.new('category_name' => 'Home')
+automobile = Category.new('category_name' => 'Automobile')
+taxes = Category.new('category_name' => 'Taxes')
+big_outlay = Category.new('category_name' => 'Big outlay')
+other = Category.new('category_name' => 'Other')
 
 food.save
 daily_goods.save
@@ -51,10 +51,10 @@ taxes.save
 big_outlay.save
 other.save
 
-tesco = Merchant.new('merchant_name' => 'Tesco', 'logo' => 'tesco' )
-boots = Merchant.new('merchant_name' => 'Boots', 'logo' => 'boots' )
-sainsbary = Merchant.new('merchant_name' => 'Sainsbary', 'logo' => 'sainsbary' )
-hmsmith = Merchant.new('merchant_name' => 'HM Smith', 'logo' => 'hmsmith' )
+tesco = Merchant.new('merchant_name' => 'Tesco')
+boots = Merchant.new('merchant_name' => 'Boots')
+sainsbary = Merchant.new('merchant_name' => 'Sainsbary')
+hmsmith = Merchant.new('merchant_name' => 'HM Smith')
 
 tesco.save
 boots.save

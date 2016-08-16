@@ -13,8 +13,7 @@ CREATE TABLE users(
 
 CREATE TABLE categories(
   id SERIAL4 PRIMARY KEY,
-  category_name VARCHAR(255),
-  logo VARCHAR(255)
+  category_name VARCHAR(255)
 );
 
 CREATE TABLE merchants (

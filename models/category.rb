@@ -3,15 +3,14 @@ require_relative('../db/sql_runner')
 require_relative('./transaction')
 
 class Category
-  attr_reader(:id, :category_name, :logo)
+  attr_reader(:id, :category_name)
   def initialize(options)
     @id = options['id'].to_i
     @category_name = options['category_name']
-    @logo = options['logo']
   end
 
   def save()
-    sql = "INSERT INTO categories (category_name, logo) VALUES ('#{@category_name}', '#{@logo}') RETURNING *;"
+    sql = "INSERT INTO categories (category_name) VALUES ('#{@category_name}') RETURNING *;"
     category = SqlRunner.run(sql).first
     @id = category['id']
   end
