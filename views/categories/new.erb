@@ -4,16 +4,16 @@
   <input type="text" name="category_name">
   <label for="logo">Category logo</label>
   <input type="text" name="logo">
-  <% @categories.each do |category| %>
-  <ul>
-    <li>
-      <p><%= category.category_name %></p>
-      <form action="/categories/<%= category.id %>/delete" method="post">
-        <input type="submit" value="Delete">
-      </form>
-    </li>
-  </ul>
-  <% end %> 
-  
   <input type="submit" value="Add !">
 </form>
+
+<% @categories.each do |category| %>
+<ul>
+  <li>
+    <p><%= category.category_name %></p>
+    <form action="/categories/<%= category.id %>/delete" method="post">
+      <input type="submit" value="Delete">
+    </form>
+  </li>
+</ul>
+<% end %>

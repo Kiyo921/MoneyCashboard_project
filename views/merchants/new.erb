@@ -2,11 +2,17 @@
 <form action="/merchants" method="post">
   <label for="merchant_name">Merchant name</label>
   <input type="text" name="merchant_name"> 
-  <select name="transaction_id">
-    <% @transactions.each do |transaction| %>
-    <option value="<%=transaction.id%>"><%=transaction.memo %></option>
-    <% end %>
-  </select><br>
-  
   <input type="submit" value="Add merchant!">
 </form>
+
+
+<% @merchants.each do |merchant| %>
+<ul>
+  <li>
+    <p><%= merchant.merchant_name %></p>
+    <form action="/merchants/<%= merchant.id %>/delete" method="post">
+      <input type="submit" value="Delete">
+    </form>
+  </li>
+</ul>
+<% end %>

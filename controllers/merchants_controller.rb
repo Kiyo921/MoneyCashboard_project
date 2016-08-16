@@ -17,7 +17,7 @@ end
 
 #New
 get '/merchants/new' do
-  @transactions = Transaction.all()
+  @merchants = Merchant.all()
   erb(:'merchants/new')
 end
 
@@ -25,7 +25,7 @@ end
 post '/merchants' do
   @merchant = Merchant.new(params)
   @merchant.save
-  redirect(to("/merchants"))
+  redirect(to("/transactions/new"))
 end
 
 #Show
@@ -49,5 +49,5 @@ end
 #Delete
 post '/merchants/:id/delete' do
   @merchant = Merchant.delete(params[:id])
-  redirect(to("/merchants"))
+  redirect(to("/transactions/new"))
 end
