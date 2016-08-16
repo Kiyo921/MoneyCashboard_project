@@ -18,7 +18,7 @@ end
 
 #New
 get "/categories/new" do
-  @transactions = Transaction.all()
+  @categories = Category.all
   erb(:"categories/new")
 end
 #Create
@@ -28,6 +28,8 @@ post "/categories" do
   redirect(to("/transactions/new"))
 end
 
-#Edit
-#Update
 #Delete
+post "/categories/:id/delete" do
+  @category = Category.delete(params[:id])
+  redirect(to("/transactions/new"))
+end
