@@ -75,11 +75,13 @@
                       <%= transaction.memo %>
                     </td>
                     <td>
-                      <a href="/transactions/<%= transaction.id %>/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                      <a href="/transactions/<%= transaction.id %>/edit">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
                     </td>
                     <td>
                       <form method="post" action="/transactions/<%= transaction.id %>/delete">
-                      <i class="fa fa-times" aria-hidden="true"><input type="submit" value="Delete"></i>   
+                        <input class="btn" type="submit" value="Delete">
+                        </input>   
                       </form>
                     </td>  
                   </tr>

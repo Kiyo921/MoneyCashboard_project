@@ -5,7 +5,7 @@ require_relative('./category')
 require('pry-byebug')
 
 class Analysis
-  attr_reader(:users, :transactions, :merchants, :categories)
+  attr_reader(:users, :transactions, :merchants, :categories, :total)
 
   def initialize( transactions )
     @transactions = transactions
@@ -42,6 +42,16 @@ class Analysis
   end
 
   def total()
-    return @transactions.reduce(0) { | sum, t | sum + t.amount }
+    @total =  @transactions.reduce(0) { | sum, t | sum + t.amount }
+    return @total
   end
+
+  def percent( transaction )
+    (transaction/@total.to_f) * 100
+  end
+
+  def total_360_degree(transaction)
+    percent(transaction) * 360/100
+  end
+
 end

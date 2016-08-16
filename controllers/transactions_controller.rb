@@ -39,8 +39,14 @@ post '/transactions' do
   redirect(to("/transactions"))
 end
 
-#Show Analysis page
+#Show in analysis page
 get '/transactions/analysis' do
+  @current_user = current_user()
+  @transactions = @current_user.transactions()
+  @analysis = Analysis.new( @transactions )
+  @total = @analysis.total
+  # @transactions = @analysis.percent
+  # binding.pry
   erb(:'/transactions/analysis')
 end
 
