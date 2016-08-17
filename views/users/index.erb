@@ -6,36 +6,42 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-            <h3>Filter</h3>
-              <form action="/users/filter_by_date" method="get">
-                From:<input type="date" name="start_date">
-                To:<input type="date" name="end_date">
-                <input type="submit" value="Sort by time" class="btn btn-primary">
-              </form>
-              <form action="/users/filter_by_category" method="get">
-                <select name="category_id">
-                  <% @categories.each do |category| %>
-                  <% if @category_id == category.id %>
-                  <option value="<%=category.id%>" selected="selected"><%=category.category_name %></option>
-                  <% else  %>
-                  <option value="<%=category.id%>"><%=category.category_name %></option>
-                  <% end %>
-                  <% end %>
-                </select>
-                <input type="submit" value="By Category" class="btn btn-primary">
-              </form>
-              <form action="/users/filter_by_merchant" method="get">
-                <select name="merchant_id">
-                  <% @merchants.each do |merchant| %>
-                    <% if @merchant_id == merchant.id %>
-                    <option value="<%=merchant.id%>" selected="selected"><%=merchant.merchant_name %></option>
+            <div class="form">
+              <h3>Filter</h3>
+                <form action="/users/filter_by_date" method="get">
+                  From:<input type="date" name="start_date">
+                  To:<input type="date" name="end_date">
+                  <input type="submit" value="Sort by time" class="btn btn-primary">
+                </form>
+                <form action="/users/filter_by_category" method="get">
+                  <select name="category_id">
+                    <% @categories.each do |category| %>
+                    <% if @category_id == category.id %>
+                    <option value="<%=category.id%>" selected="selected"><%=category.category_name %></option>
                     <% else  %>
-                    <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
+                    <option value="<%=category.id%>"><%=category.category_name %></option>
                     <% end %>
-                  <% end %>
-                </select>
-                <input type="submit" value="By Store" class="btn btn-primary">
-              </form>
+                    <% end %>
+                  </select>
+                  <input type="submit" value="By Category" class="btn btn-primary">
+                </form>
+                <form action="/users/filter_by_merchant" method="get">
+                  <select name="merchant_id">
+                    <% @merchants.each do |merchant| %>
+                      <% if @merchant_id == merchant.id %>
+                      <option value="<%=merchant.id%>" selected="selected"><%=merchant.merchant_name %></option>
+                      <% else  %>
+                      <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
+                      <% end %>
+                    <% end %>
+                  </select>
+                  <input type="submit" value="By Store" class="btn btn-primary">
+                </form>
+            </div>
+            <div>
+              <p>
+              </p>
+            </div>
               <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -51,7 +57,7 @@
                     <th>
                       Store
                     </th>
-                    <th>
+                    <th class="memo_adjust">
                       Memo
                     </th>
                   </tr>

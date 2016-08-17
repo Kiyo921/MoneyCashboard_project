@@ -24,6 +24,7 @@ get '/' do
 end
 
 get '/registrations/signup' do
+  @login_sign = 0
   erb(:"/registrations/signup")
 end
 
@@ -46,7 +47,7 @@ post '/sessions' do
   @user = User.find_by(params[:email], params[:password])
   
   session[:id] = @user.id
-  redirect '/'
+  erb(:"/home")
 end
 
 get '/sessions/logout' do

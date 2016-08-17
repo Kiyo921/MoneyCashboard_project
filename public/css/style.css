@@ -11,7 +11,7 @@
  .background_image{
     background-image: url("http://qwikwebs.com/resources/ckfinder/userfiles/551a0df3e1e1ab53c7be3bcc2e476facimages/BD%20Financial%20Managment.jpg");
     height:100%;
-    min-height:500px;
+    min-height:600px;
  }
  .title1{
     background-color:black;
@@ -29,7 +29,7 @@
  }
 
  .signup_form{
-    background-color: black;
+    background-color: #383737;
  }
 
 /*Navigation menu bar*/
@@ -124,8 +124,13 @@
 
 .btn {
     border: 0px;
-    background-color: transparent;
+    /*background-color: transparent;*/
 
+}
+
+/*Admin form*/
+.form_name{
+    color:white;
 }
 
 /*Chart description*/
@@ -136,4 +141,20 @@
 
 .pie_chart_div{
     display:inline-block;
+}
+
+
+/*Transaction List*/
+.table-bordered{
+    background-color:white;
+}
+.memo_adjust{
+    width:300px;
+}
+
+/*Login form*/
+
+.form{
+    background-color:white;
+
 }
