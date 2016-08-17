@@ -1,4 +1,11 @@
- h2{
+ 
+ /*Home page*/
+ .background_image{
+    background-image: url("http://qwikwebs.com/resources/ckfinder/userfiles/551a0df3e1e1ab53c7be3bcc2e476facimages/BD%20Financial%20Managment.jpg");
+    height:100%;
+    min-height:600px;
+ }
+ .title1{
     background-color: rgb(30,30,30);
     color: #FFFFFF;
     display: inline-block;
@@ -7,17 +14,8 @@
     margin-bottom: 10px;
     padding: 5px 15px 8px 10px;
  }
- /*First page*/
- .background_image{
-    background-image: url("http://qwikwebs.com/resources/ckfinder/userfiles/551a0df3e1e1ab53c7be3bcc2e476facimages/BD%20Financial%20Managment.jpg");
-    height:100%;
-    min-height:600px;
- }
- .title1{
-    background-color:black;
- }
  .lead{
-    background-color:white;
+    background-color:rgba(255,255,255, 0.85);
     padding:10px;
     margin-top:10px;
  }
@@ -146,15 +144,54 @@
 
 /*Transaction List*/
 .table-bordered{
-    background-color:white;
+    background-color:rgba(255,255,255, 0.85);
+    font-family: 'Oxygen', sans-serif;
+}
+.amount-adjust{
+    width:20px;
 }
 .memo_adjust{
     width:300px;
 }
 
+.filter-form{
+    width:550px;
+    padding: 10px;
+}
+
+.filter-button {
+    float:right;
+    width:100px;
+}
+
+.filter-dropdown{
+    width:150px;
+    height:30px;
+    display: inline-block;
+}
+
+.total-expenditure{
+    padding-top:5px;
+    padding-bottom:5px;
+    margin-bottom:20px;
+    background-color: rgba(255,255,255, 0.85);
+    border-radius: 20px;
+    border-style: groove;
+}
+
+.total-expenditure-text{
+    padding:5px;
+}
+
+.edit-icon{
+    width:10px;
+    vertical-align: bottom;
+}
+
+
 /*Login form*/
 
 .form{
-    background-color:white;
+    background-color:rgba(255,255,255, 0.85);
 
 }

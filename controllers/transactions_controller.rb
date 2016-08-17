@@ -20,12 +20,11 @@ end #Probably not necessary
 
 #New
 get '/transactions/new' do
-  #@user = User.find(params[:id]) 
-  #Not sure how to get user_id
-  # binding.pry
   @current_user = current_user()
   @categories = Category.all()
   @merchants = Merchant.all()
+  @transactions = @current_user.transactions()
+  @analysis = Analysis.new( @transactions )
   @user = User.find(@current_user.id)
 
   #@users = User.all()
