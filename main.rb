@@ -1,4 +1,5 @@
 require('sinatra')
+require('sinatra/flash')
 require('pony')
 require('sinatra/contrib/all')
 require_relative('controllers/users_controller')

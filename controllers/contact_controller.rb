@@ -5,7 +5,7 @@ end
 
 post '/contact' do
   send_message #This uses the helper method send_message to deal with the message that was posted.
-  # flash[:notice] = "Thank you for your message. We'll be in touch soon." #flash to display a thank-you message to the user before redirecting them back to the Home page
+  flash[:notice] = "Thank you for your message. We'll be in touch soon." #flash to display a thank-you message to the user before redirecting them back to the Home page
   redirect(to("/users/home"))
 end
 
@@ -22,7 +22,7 @@ def send_message
       :port => '587', 
       :enable_starttls_auto => true,
       :user_name => '921kiyo@gmail.com',
-      :password => 'password', # Put PW only when doing presentation
+      :password => '921kiyohito', # Put PW only when doing presentation
       :authentication => :plain,
       :domain => 'localhost.localdomain'
       }) 
