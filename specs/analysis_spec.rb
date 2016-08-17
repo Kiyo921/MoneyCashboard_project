@@ -36,16 +36,19 @@ class TestAnalysis < Minitest::Test
   def test_filter_by_category
     result = @analysis.filter_by_category(1)
     assert_equal(1, result[0].category_id)
+    assert_equal(1, result[1].category_id)
   end
 
   def test_filter_by_merchant
     result = @analysis.filter_by_category(1)
     assert_equal(1, result[0].merchant_id)
+    assert_equal(1, result[1].merchant_id)
   end
 
   def test_filter_by_date
     result = @analysis.filter_by_date('07-10-2016', '07-11-2016')
     assert_equal(1, result[0].id)
+    assert_equal(2, result[1].id)
   end
 
   def test_total
@@ -55,7 +58,7 @@ class TestAnalysis < Minitest::Test
 
   def test_percent
     result = @analysis.percent(60)
-    assert_equal(5, result)
+    assert_equal(100, result)
   end
 
 end

@@ -24,7 +24,6 @@
           <div class="dropdown-content">
           <ul>
             <li class="dropdown_option"><a href="/users/<%= session[:id] %>/show">Account summary</a></li>
-            <li class="dropdown_option"><a href="#">Category settings</a></li>
             <li class="dropdown_option"><a href="/contact">Contact us</a></li>
             <li class="dropdown_option"><a href="#">About</a></li>
             </ul>
@@ -42,7 +41,6 @@
   <div>
     <%= styled_flash %>
       
-    </section>
     <%= yield %>
   </div>
 </body>

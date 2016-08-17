@@ -45,8 +45,9 @@ class Analysis
     return @total
   end
 
-  def percent( transaction )
-    (transaction/@total.to_f) * 100
+  def percent( amount )
+    (amount / total.to_f) * 100
   end
+
 
 end
