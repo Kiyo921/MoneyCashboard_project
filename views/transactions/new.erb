@@ -8,29 +8,38 @@
 
               <div class="form filter-form"><br>
                 <form action="/transactions" method="post">
-                    <label for="amount">Amount</label>
-                    <input type="number" name="amount">
-                    <label for="memo">Memo</label>
-                    <input type="text" name="memo">
-                    <label for="dates">Dates</label>
-                    <input type="date" name="dates">
-                    <input type="text" name="user_id" value="<%= @user.id%>" style="visibility: hidden;">
-                    <h3>Category</h3>
-                    <select name="category_id">
-                      <% @categories.each do |category| %>
-                      <option value="<%=category.id%>"><%=category.category_name %></option>
-                      <% end %>
-                    </select><br>
-                    <a href="/categories/new">Add new category => </a>
-                    <h3>Store</h3>
-                    <select name="merchant_id">
-                      <% @merchants.each do |merchant| %>
-                      <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
-                      <% end %>
-                    </select><br>
-                    <a href="/merchants/new">Add new store => </a><br>  
+                    <label for="amount">Amount(£):</label>
+                    <input type="number" name="amount" class="amount_input">
+                    <label for="dates">Dates:</label>
+                    <input type="date" name="dates"><br>
+                    <div class="dropdown_position">
+                      <div class="dropdown_position_inside1">
+                        <label for="category_id" class="category_title">Category</label>
+                        <select name="category_id" class="form-control filter-dropdown">
+                          <% @categories.each do |category| %>
+                          <option value="<%=category.id%>"><%=category.category_name %></option>
+                          <% end %>
+                        </select>
+                        <br>
+                        <a href="/categories/new">Add new category => </a> <br>
+                      </div>
+                      <div class="dropdown_position_inside2">
+                        <label for="merchant_id" class="store_title">Store</label>
+                        <select name="merchant_id" class="form-control filter-dropdown">
+                          <% @merchants.each do |merchant| %>
+                          <option value="<%=merchant.id%>"><%=merchant.merchant_name %></option>
+                          <% end %>
+                        </select><br>
+                        <a href="/merchants/new">Add new store => </a><br>  
+                      </div>  
+                    </div>
+                    <br>
                     
-                    <input type="submit" value="Add transaction!">
+                      <label for="memo">Memo:</label><br>
+                      <textarea name="memo" cols="30" rows="5"></textarea><br>
+                      <input type="text" name="user_id" value="<%= @user.id%>" style="visibility: hidden;">
+                    
+                    <input type="submit" class="btn btn-primary btn-sm filter-button" value="Add transaction!">
                   </form>
               </div>
 

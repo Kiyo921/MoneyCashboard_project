@@ -188,6 +188,28 @@
     vertical-align: bottom;
 }
 
+/*New Transaction*/
+.dropdown_position{
+    display: inline-flex;
+}
+.dropdown_position_inside1{
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+.dropdown_position_inside2{
+}
+
+.category_title{
+    margin-right:10px;
+}
+
+.amount_input{
+    margin-right:6px;
+}
+/*
+.store_title{
+    margin-right:10px;
+}
 
 /*Login form*/
 
