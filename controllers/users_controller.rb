@@ -10,18 +10,10 @@ end
 
 before '/users/*' do
   require_user
-end ### Any way I could combine them together??
-
-# #Index
-# get "/users" do
-#   @users = User.all
-#   erb(:"users/index")
-#   ## Probably not necessary
-# end
+end
 
 #Index by user
 get "/users/:id" do
-  # @user = User.find(params[:id])
   @current_user = current_user()
   @transactions = @current_user.transactions()
   @analysis = Analysis.new( @transactions )
@@ -42,23 +34,9 @@ get "/users/:id" do
   if date_sort
     @transactions = @analysis.filter_by_date( params[:start_date], params[:end_date] )
   end
-
+  
   erb(:"users/index")
 end
-
-#New
-get '/users/new' do
-  erb(:'users/new')
-end
-
-#Create
-post '/users' do
-  @user = User.new(params)
-  @user.save
-  redirect(to("/users"))
-end
-
- # same as register
 
 #Show
 get '/users/:id/show' do
@@ -75,10 +53,11 @@ end
 #Update
 post '/users/:id' do
   @user = User.update(params)
-  redirect(to("/users/#{params[:id]}"))
+  redirect(to("/users/home"))
 end
 
 #Delete
+#not used in the app
 post '/users/:id/delete' do
   @user = User.delete(params[:id])
   redirect(to("/users"))
