@@ -7,46 +7,55 @@ require_relative('../models/analysis')
 
 class TestAnalysis < Minitest::Test
   def setup
-    User.delete_all()
-    Category.delete_all()
-    Transaction.delete_all()
+    # Setup dummy data for testing purpose
 
-    @user1 = User.new({'name' => 'user1', 'email' => 'user1@gmail.com', 'password' => 'user1'})
-    @user2 = User.new({'name' => 'user2', 'email' => 'user2@gmail.com', 'password' => 'user2'})
-    @user3 = User.new({'name' => 'user3', 'email' => 'user3@gmail.com', 'password' => 'user3'})
-    @user4 = User.new({'name' => 'user4', 'email' => 'user4@gmail.com', 'password' => 'user4'})
+    user1 = User.new({'id' => 1, 'name' => 'user1', 'email' => 'user1@gmail.com', 'password' => 'user1'})
 
-    @user1.save
-    @user2.save
-    @user3.save
-    @user4.save
+    food = Category.new({'id' => 1,'category_name' => 'Food'})
+    daily_goods = Category.new({'id' => 2,'category_name' => 'Daily goods'})
+    transport = Category.new({'id' => 3,'category_name' => 'Transport'})
 
-    @food = Category.new('category_name' => 'Food', 'logo' => 'Food' )
-    @daily_goods = Category.new('category_name' => 'Daily goods', 'logo' => 'Daily goods' )
-    @transport = Category.new('category_name' => 'Transport', 'logo' => 'Transport' )
-    @socializing = Category.new('category_name' => 'Socializing', 'logo' => 'Socializing' )
+    tesco = Merchant.new({'id' => 1,'merchant_name' => 'Tesco'})
+    boots = Merchant.new({'id' => 2,'merchant_name' => 'Boots'})
+    sainsbary = Merchant.new({'id' => 3,'merchant_name' => 'Sainsbary'})
 
-    @food.save
-    @daily_goods.save
-    @transport.save
-    @socializing.save
+    transaction1 = Transaction.new({'id' => 1,'amount' => 10, 'memo' => 'dummy data1', 'dates' => '07-10-2016', 'user_id' => user1.id, 'category_id' => food.id, 'merchant_id' =>tesco.id})
+    transaction2 = Transaction.new({'id' => 2,'amount' => 20, 'memo' => 'dummy data2', 'dates' => '07-11-2016', 'user_id' => user1.id, 'category_id' => food.id, 'merchant_id' =>tesco.id})
+    transaction3 = Transaction.new({'id' => 3,'amount' => 30, 'memo' => 'dummy data3', 'dates' => '07-12-2016', 'user_id' => user1.id, 'category_id' => daily_goods.id, 'merchant_id' =>boots.id})
 
-    @transaction1 = Transaction.new('amount' => 100, 'memo' => 'Food', 'dates' => 'Yesterday', 'user_id' => @user1.id, 'category_id' => @food.id)
-    @transaction2 = Transaction.new('amount' => 100, 'memo' => 'Daily goods', 'dates' => 'Yesterday', 'user_id' => @user1.id, 'category_id' => @daily_goods.id)
-    @transaction3 = Transaction.new('amount' => 100, 'memo' => 'Transport', 'dates' => 'Yesterday', 'user_id' => @user1.id, 'category_id' => @transport.id)
-    @transaction4 = Transaction.new('amount' => 100, 'memo' => 'Socializing', 'dates' => 'Yesterday', 'user_id' => @user2.id, 'category_id' => @socializing.id)
+    @transactions = [transaction1, transaction2, transaction3]
+    @analysis = Analysis.new(@transactions)
 
-    @transaction1.save
-    @transaction2.save
-    @transaction3.save
-    @transaction4.save
-
-    @analysis = Analysis.new()
   end
 
   def test_total_expenditure
     result = @analysis.total_expenditure
-    assert_equal(1000, result)
+    assert_equal(60, result)
+  end
+
+  def test_filter_by_category
+    result = @analysis.filter_by_category(1)
+    assert_equal(1, result[0].category_id)
+  end
+
+  def test_filter_by_merchant
+    result = @analysis.filter_by_category(1)
+    assert_equal(1, result[0].merchant_id)
+  end
+
+  def test_filter_by_date
+    result = @analysis.filter_by_date('07-10-2016', '07-11-2016')
+    assert_equal(1, result[0].id)
+  end
+
+  def test_total
+    result = @analysis.total
+    assert_equal(60, result)
+  end
+
+  def test_percent
+    result = @analysis.percent(60)
+    assert_equal(5, result)
   end
 
 end
