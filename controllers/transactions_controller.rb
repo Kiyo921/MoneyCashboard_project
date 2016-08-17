@@ -36,7 +36,8 @@ end
 post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save
-  redirect(to("/transactions"))
+  flash[:notice] = "New transaction added!"
+  redirect(to("/users/index"))
 end
 
 #Show in analysis page
@@ -67,12 +68,14 @@ end
 #Update
 post '/transactions/:id' do
   @transaction = Transaction.update(params)
+  flash[:notice] = "Transaction updated!"
   redirect(to("/users/index"))
 end
 
 #Delete
 post '/transactions/:id/delete' do
   Transaction.delete(params[:id])
+  flash[:notice] = "Transaction deleted!"
   redirect(to("/users/index"))
 end
 

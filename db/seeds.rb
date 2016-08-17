@@ -55,22 +55,47 @@ tesco = Merchant.new('merchant_name' => 'Tesco')
 boots = Merchant.new('merchant_name' => 'Boots')
 sainsbary = Merchant.new('merchant_name' => 'Sainsbary')
 hmsmith = Merchant.new('merchant_name' => 'HM Smith')
+primark = Merchant.new('merchant_name' => 'Primark')
+easyjet = Merchant.new('merchant_name' => 'EasyJet')
+amazon = Merchant.new('merchant_name' => 'Amazon')
+restaurant = Merchant.new('merchant_name' => 'Restaurant')
+scot_rail = Merchant.new('merchant_name' => 'ScotRail')
 
 tesco.save
 boots.save
 sainsbary.save
 hmsmith.save
+primark.save
+easyjet.save
+amazon.save
+restaurant.save
+scot_rail.save
 
-transaction1 = Transaction.new('amount' => 100, 'memo' => 'Food', 'dates' => '12-10-2016', 'user_id' => user1.id, 'category_id' => food.id, 'merchant_id' =>tesco.id)
-transaction2 = Transaction.new('amount' => 100, 'memo' => 'Daily goods', 'dates' => '12-11-2016', 'user_id' => user1.id, 'category_id' => daily_goods.id, 'merchant_id' =>tesco.id)
-transaction3 = Transaction.new('amount' => 100, 'memo' => 'Transport', 'dates' => '12-09-2016', 'user_id' => user1.id, 'category_id' => transport.id, 'merchant_id' =>tesco.id)
-transaction4 = Transaction.new('amount' => 100, 'memo' => 'Socializing', 'dates' => '12-12-2016', 'user_id' => user2.id, 'category_id' => socializing.id, 'merchant_id' =>tesco.id)
+transaction1 = Transaction.new('amount' => 12, 'memo' => 'lots of veggies, dairy products, olive oil etc', 'dates' => '07-10-2016', 'user_id' => user1.id, 'category_id' => food.id, 'merchant_id' =>tesco.id)
+transaction2 = Transaction.new('amount' => 9, 'memo' => 'Toilet paper, shampoo, suncream', 'dates' => '07-11-2016', 'user_id' => user1.id, 'category_id' => daily_goods.id, 'merchant_id' =>boots.id)
+transaction3 = Transaction.new('amount' => 60, 'memo' => 'Flight ticket to London', 'dates' => '07-09-2016', 'user_id' => user1.id, 'category_id' => transport.id, 'merchant_id' =>easyjet.id)
+transaction4 = Transaction.new('amount' => 200, 'memo' => 'Italian restaurant in London, Archer St.', 'dates' => '07-09-2016', 'user_id' => user1.id, 'category_id' => socializing.id, 'merchant_id' =>restaurant.id)
+transaction5 = Transaction.new('amount' => 25, 'memo' => 'Souvenir', 'dates' => '07-10-2016', 'user_id' => user1.id, 'category_id' => socializing.id, 'merchant_id' =>hmsmith.id)
+transaction6 = Transaction.new('amount' => 260, 'memo' => 'New smartphone, Galaxy S6', 'dates' => '08-14-2016', 'user_id' => user1.id, 'category_id' => other.id, 'merchant_id' =>amazon.id)
+transaction7 = Transaction.new('amount' => 35, 'memo' => 'Drone(Syma X8G 2.4g 4ch 6 Axis Headless Gyro RTF RC Drone Quadcopter With 8MP 1080P HD Camera)', 'dates' => '08-15-2016', 'user_id' => user1.id, 'category_id' => other.id, 'merchant_id' =>amazon.id)
+transaction8 = Transaction.new('amount' => 800, 'memo' => '3D printer(Flashforge® 3D Printer Creator Pro Dual Extruder Printer with Optimized Build Plate and Upgraded Spool Holder)', 'dates' => '08-15-2016', 'user_id' => user1.id, 'category_id' => other.id, 'merchant_id' =>amazon.id)
+transaction9 = Transaction.new('amount' => 60, 'memo' => 'French restaurant in Grassmarket', 'dates' => '08-16-2016', 'user_id' => user1.id, 'category_id' => socializing.id, 'merchant_id' =>restaurant.id)
+transaction10 = Transaction.new('amount' => 8, 'memo' => 'Train to Glasgow, meeting up with my old friend', 'dates' => '08-17-2016', 'user_id' => user1.id, 'category_id' => transport.id, 'merchant_id' =>scot_rail.id)
+transaction11 = Transaction.new('amount' => 100, 'memo' => 'Socializing', 'dates' => '08-18-2016', 'user_id' => user2.id, 'category_id' => socializing.id, 'merchant_id' =>tesco.id)
+transaction12 = Transaction.new('amount' => 100, 'memo' => 'Socializing', 'dates' => '08-18-2016', 'user_id' => user2.id, 'category_id' => socializing.id, 'merchant_id' =>tesco.id)
 
 transaction1.save
 transaction2.save
 transaction3.save
 transaction4.save
-
+transaction5.save
+transaction6.save
+transaction7.save
+transaction8.save
+transaction9.save
+transaction10.save
+transaction11.save
+transaction12.save
 
 binding.pry
 nil
