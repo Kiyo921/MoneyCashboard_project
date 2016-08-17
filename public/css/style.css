@@ -18,14 +18,17 @@
  .lead{
     background-color:white;
     padding:10px;
-    margin-top:20px;
-    width:50%;
+    margin-top:10px;
  }
 
  .stock_market_logo {
     height:60px;
     width:60px;
     background-color: yellowgreen;
+ }
+
+ .signup_form{
+    background-color: black;
  }
 
 /*Navigation menu bar*/

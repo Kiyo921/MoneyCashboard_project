@@ -19,6 +19,7 @@ end
 
 
 get '/' do
+  @user = User.find(session[:id])  unless session[:id] == nil
   erb :home
 end
 
@@ -32,7 +33,7 @@ post '/registrations' do
   @user = User.new(params)
   @user.save
   session[:id] = @user.id
-  redirect(to("/users/home"))
+  redirect(to("/"))
 end
 
 get '/sessions/login' do
@@ -45,7 +46,7 @@ post '/sessions' do
   @user = User.find_by(params[:email], params[:password])
   
   session[:id] = @user.id
-  redirect '/users/home'
+  redirect '/'
 end
 
 get '/sessions/logout' do

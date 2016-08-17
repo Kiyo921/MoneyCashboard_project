@@ -79,7 +79,7 @@
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
                     </td>
                     <td>
-                      <form method="post" action="/transactions/<%= transaction.id %>/delete">
+                      <form method="post" action="/transactions/<%= transaction.id %>/delete" onsubmit="return confirm('Are you sure you want to delete this?')">
                         <input class="btn" type="submit" value="Delete">
                         </input>   
                       </form>
