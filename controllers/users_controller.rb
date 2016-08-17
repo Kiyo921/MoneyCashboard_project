@@ -53,7 +53,7 @@ end
 #Update
 post '/users/:id' do
   @user = User.update(params)
-  redirect(to("/users/home"))
+  redirect(to("/"))
 end
 
 #Delete
