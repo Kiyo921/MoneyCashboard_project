@@ -6,8 +6,7 @@
   <input type="text" name="memo">
   <label for="dates">Dates</label>
   <input type="date" name="dates">
-  <label for="user_id">User Id</label>
-  <input type="text" name="user_id" value="<%= @user.id%>">
+  <input type="text" name="user_id" value="<%= @user.id%>" style="visibility: hidden;">
   <h3>Category</h3>
   <select name="category_id">
     <% @categories.each do |category| %>
