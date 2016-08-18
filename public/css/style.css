@@ -1,11 +1,11 @@
  
- /*Home page*/
- .background_image{
+/*Home page*/
+.background_image{
     background-image: url("http://qwikwebs.com/resources/ckfinder/userfiles/551a0df3e1e1ab53c7be3bcc2e476facimages/BD%20Financial%20Managment.jpg");
     height:100%;
     min-height:600px;
- }
- .title1{
+}
+.title1{
     background-color: rgb(30,30,30);
     color: #FFFFFF;
     display: inline-block;
@@ -13,23 +13,23 @@
     line-height: 1.5em;
     margin-bottom: 10px;
     padding: 5px 15px 8px 10px;
- }
- .lead{
+}
+.lead{
     background-color:rgba(255,255,255, 0.85);
     padding:10px;
     margin-top:10px;
- }
+}
 
- .stock_market_logo {
+.stock_market_logo {
     height:60px;
     width:60px;
     background-color: yellowgreen;
- }
+}
 
- .signup_form{
+.signup_form{
     background-color: #383737;
     margin-bottom: 20px;
- }
+}
 
 /*Navigation menu bar*/
 
@@ -39,7 +39,7 @@
 }
 
 
- .menu_bar_ul {
+.menu_bar_ul {
     display: inline-block;
     list-style-type: none;
     margin: 0;
@@ -244,4 +244,14 @@
 .choice{
     font-size:22px;
     margin:5px;
+}
+
+/*Flash*/
+
+.flash {
+  width: 600px;
+  padding: 5px;
+  font-weight: bold;
+  margin: 20px;
+  color: $red;
 }

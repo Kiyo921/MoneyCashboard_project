@@ -51,7 +51,7 @@ end
 
 get '/sessions/logout' do
   #This route is responsible for logging the user out by clearing the session hash.
-  
+  flash[:notice] = "You are being logged off!!"
   session.clear # or set it to nil
   redirect '/'
 end

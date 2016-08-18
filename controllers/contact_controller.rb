@@ -22,7 +22,7 @@ def send_message
       :port => '587', 
       :enable_starttls_auto => true,
       :user_name => '921kiyo@gmail.com',
-      :password => 'pw', # Put PW only when doing presentation
+      :password => '921kiyohito', # Put PW only when doing presentation
       :authentication => :plain,
       :domain => 'localhost.localdomain'
       }) 

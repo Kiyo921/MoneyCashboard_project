@@ -49,5 +49,6 @@ end
 #Delete
 post '/merchants/:id/delete' do
   @merchant = Merchant.delete(params[:id])
+  flash[:notice] = "Store successfully deleted!"
   redirect(to("/merchants/new"))
 end
