@@ -9,7 +9,7 @@ Category.delete_all()
 Transaction.delete_all()
 Merchant.delete_all()
 
-user1 = User.new({'name' => 'user1', 'email' => 'user1@gmail.com', 'password' => 'user1'})
+user1 = User.new({'name' => 'Kiyo', 'email' => 'user1@gmail.com', 'password' => 'user1'})
 user2 = User.new({'name' => 'user2', 'email' => 'user2@gmail.com', 'password' => 'user2'})
 user3 = User.new({'name' => 'user3', 'email' => 'user3@gmail.com', 'password' => 'user3'})
 user4 = User.new({'name' => 'user4', 'email' => 'user4@gmail.com', 'password' => 'user4'})
