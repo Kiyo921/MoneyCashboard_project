@@ -51,15 +51,15 @@
                       <td class="edit-icon">
                         <form method="post" action="/transactions/<%= transaction.id %>/delete" onsubmit="return confirm('Are you sure you want to delete this?')">
                           <button type="submit" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>   
-                      </form>
-                    </td>  
-                  </tr>
-                </tbody>
-                <% end %>
-              </table>
-              <div class="total-expenditure">
-                <h4 class="total-expenditure-text">Total expenditure: <b><u>£<%= @analysis.total() %></u></b></h4>
-              </div>
+                        </form>
+                      </td>  
+                    </tr>
+                  </tbody>
+                  <% end %>
+                </table>
+                <div class="total-expenditure">
+                  <h4 class="total-expenditure-text">Total expenditure: <b><u>£<%= @analysis.total() %></u></b></h4>
+                </div>
               </div>
             </div>
           </div>
