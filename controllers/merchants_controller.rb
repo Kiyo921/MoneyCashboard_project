@@ -49,5 +49,5 @@ end
 #Delete
 post '/merchants/:id/delete' do
   @merchant = Merchant.delete(params[:id])
-  redirect(to("/transactions/new"))
+  redirect(to("/merchants/new"))
 end

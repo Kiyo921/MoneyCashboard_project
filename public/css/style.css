@@ -208,6 +208,15 @@
     margin-right:6px;
 }
 
+.list-form{
+    padding:10px;
+    width:280px;
+}
+
+.list-adjust{
+    display:inline-flex;
+}
+
 /*Login form*/
 
 .form{

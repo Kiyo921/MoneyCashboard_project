@@ -44,8 +44,7 @@ end
 
 post '/sessions' do
   #This route is responsible for receiving the POST request that gets sent when a user hits "submit" on that login form. This route has the code that grabs the user's info from the params, finds that user from the database and signs that user in.
-  @user = User.find_by(params[:email], params[:password])
-  
+  @user = User.find_by(params[:email], params[:password]) 
   session[:id] = @user.id
   erb(:"/home")
 end

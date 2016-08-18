@@ -31,5 +31,5 @@ end
 #Delete
 post "/categories/:id/delete" do
   @category = Category.delete(params[:id])
-  redirect(to("/transactions/new"))
+  redirect(to("/categories/new"))
 end
