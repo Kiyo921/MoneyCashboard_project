@@ -206,14 +206,16 @@
 .amount_input{
     margin-right:6px;
 }
-/*
-.store_title{
-    margin-right:10px;
-}
 
 /*Login form*/
 
 .form{
     background-color:rgba(255,255,255, 0.85);
 
+}
+
+/*Contact form*/
+
+.contact_form{
+    width:250px;
 }
