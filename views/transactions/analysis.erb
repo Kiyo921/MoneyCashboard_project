@@ -1,41 +1,45 @@
-<h3>Pie chart by category</h3>
-<div class="pie" data-start="0" data-value="0"></div>
-<div class="pie highlight" data-start="30" data-value="30"></div>
-<div class="pie" data-start="60" data-value="40"></div>
-<div class="pie big" data-start="100" data-value="260"></div>
-<% @transactions.each do |transaction| %>
-<%= @analysis.percent(transaction.amount)%>
-<% end %>
-
-<img src="http://studentenfunk-regensburg.de/wp-content/uploads/2015/06/pie-chart.png" alt="Pie Chart">
-
-
-<div class="chart_description">
-  <ul class="key">
-    <li>
-      <strong class="percent red">4%</strong>
-      <span class="choice">Jump right in, startupfille here I come.</span>
-    </li>
-    <li>
-      <strong class="percent gray">4%</strong>
-      <span class="choice">Email back to discuss, flattered and positive.</span>
-    </li>
-    <li>
-      <strong class="percent purple">6%</strong>
-      <span class="choice">Respond and say "Thanks but no thanks."</span>
-    </li>
-    <li>
-      <strong class="percent blue">9%</strong>
-      <span class="choice">Email back to discuss, all business.</span>
-    </li>
-    <li>
-      <strong class="percent yellow">31%</strong>
-      <span class="choice">Email back to discuss, but skeptically.</span>
-    </li>
-    <li>
-      <strong class="percent orange">46%</strong>
-      <span class="choice">Delete the email.</span>
-    </li>
-  </ul>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tabbable" id="tabs-839710">  
+        <div class="container-fluid">
+          <div class="row form_pie_chart">
+            <div class="col-md-6 pie_chart"> 
+              <img src="http://studentenfunk-regensburg.de/wp-content/uploads/2015/06/pie-chart.png" alt="Pie Chart">
+            </div>
+            <div class="col-md-6">
+              <div class="chart_description">
+                <ul class="key">
+                  <li class="choice">
+                    <strong class="percent red">4%</strong>
+                    <span class="choice">Food</span>
+                  </li>
+                  <li class="choice">
+                    <strong class="percent gray">4%</strong>
+                    <span class="choice">Daily Goods</span>
+                  </li>
+                  <li class="choice">
+                    <strong class="percent purple">6%</strong>
+                    <span class="choice">Transport</span>
+                  </li>
+                  <li class="choice">
+                    <strong class="percent blue">9%</strong>
+                    <span class="choice">Socializing</span>
+                  </li>
+                  <li class="choice">
+                    <strong class="percent yellow">31%</strong>
+                    <span class="choice">Hobbies</span>
+                  </li>
+                  <li class="choice">
+                    <strong class="percent orange">46%</strong>
+                    <span class="choice">Education</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-

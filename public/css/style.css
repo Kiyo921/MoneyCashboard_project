@@ -220,3 +220,19 @@
 .contact_form{
     width:250px;
 }
+
+/*Pie Chart*/
+.pie_chart{
+    width:300px;
+
+}
+
+.form_pie_chart{
+    background-color:rgba(255,255,255, 0.85);
+    width:700px;
+}
+
+.choice{
+    font-size:22px;
+    margin:5px;
+}
