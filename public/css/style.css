@@ -255,3 +255,8 @@
   margin: 20px;
   color: $red;
 }
+
+/*Error*/
+.error{
+    color:red;
+}
