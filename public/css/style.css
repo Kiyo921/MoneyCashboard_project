@@ -254,6 +254,7 @@
   font-weight: bold;
   margin: 20px;
   color: $red;
+  style="background-color:rgba(0, 0, 0, 0.0);
 }
 
 /*Error*/

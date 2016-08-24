@@ -7,12 +7,9 @@
           <div class="row">
             <div class="col-md-6"> 
               <div class="form filter-form"><br>
-                <form action="/users/filter_by_date" method="get"><i class="fa fa-filter" aria-hidden="true"></i>
+                <form action="/users/filter" method="get"><i class="fa fa-filter" aria-hidden="true"></i>
                   From:<input type="date" name="start_date">
                   To:<input type="date" name="end_date">
-                  <input type="submit" value="Sort by time" class="btn btn-primary btn-sm filter-button">
-                </form><br>
-                <form action="/users/filter_by_category" method="get">
                   <div class="filter-dropdown">
                     <select name="category_id" class="filter-dropdown form-control">
                       <% @categories.each do |category| %>
@@ -24,10 +21,6 @@
                       <% end %>
                     </select>
                   </div>
-                  <input type="submit" value="By Category" class="btn btn-primary btn-sm filter-button">
-
-                </form><br>
-                <form action="/users/filter_by_merchant" method="get">
                   <div class="filter-dropdown">
                     <select name="merchant_id" class="filter-dropdown form-control">
                       <% @merchants.each do |merchant| %>
@@ -40,7 +33,7 @@
                     </select>
                   </div>
                   <input type="submit" value="By Store" class="btn btn-primary btn-sm filter-button">
-                </form><br>
+                </form>
               </div>
 
               <%= erb(:"transactions/filter") %>

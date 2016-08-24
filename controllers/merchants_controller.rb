@@ -28,23 +28,23 @@ post '/merchants' do
   redirect(to("/transactions/new"))
 end
 
-#Show
-get '/merchants/:id' do
-  @merchant = Merchant.find(params[:id])
-  erb(:'merchants/show')
-end
+# #Show
+# get '/merchants/:id' do
+#   @merchant = Merchant.find(params[:id])
+#   erb(:'merchants/show')
+# end
 
-#Edit
-get '/merchants/:id/edit' do
-  @merchant = Merchant.find(params[:id])
-  erb(:'merchants/edit')
-end
+# #Edit
+# get '/merchants/:id/edit' do
+#   @merchant = Merchant.find(params[:id])
+#   erb(:'merchants/edit')
+# end
 
-#Update
-post '/merchants/:id' do
-  @merchant = Merchant.update(params)
-  redirect(to("/merchants/#{params[:id]}"))
-end
+# #Update
+# post '/merchants/:id' do
+#   @merchant = Merchant.update(params)
+#   redirect(to("/merchants/#{params[:id]}"))
+# end
 
 #Delete
 post '/merchants/:id/delete' do

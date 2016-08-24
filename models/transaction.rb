@@ -35,10 +35,10 @@ class Transaction
     Merchant.map_item(sql)
   end
 
-  def self.all()
-    sql = "SELECT * FROM transactions;"
-    Transaction.map_items(sql)
-  end # Probably not necessary
+  # def self.all()
+  #   sql = "SELECT * FROM transactions;"
+  #   Transaction.map_items(sql)
+  # end # Probably not necessary
 
   def self.delete_all()
     sql = "DELETE FROM transactions;"

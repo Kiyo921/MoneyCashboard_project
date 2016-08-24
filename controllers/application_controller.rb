@@ -1,13 +1,12 @@
 require_relative('../models/user')
-require('pry-byebug')
 #helper_method :current_user
 
 configure do #Code inside this block is run only once at startup.
   enable :sessions #Session cookies only last for the term of a session, and are deleted when the user closes the browser.
-  set :session_secret, "secret" #Sessions are also signed while in production mode with a randomly gen- erated token to ensure that no one has been tampering with the cookie. This token can be set manually using the following setting:
+  set :session_secret, "secret" #Sessions are also signed while in production mode with a randomly gen- erated token to ensure that no one has been tampering with the cookie. This token can be set manually like above:
 end
-#HTTP is a stateless protocol, which means that each request is independent of others. In other words, each request knows nothing about the previous or next re- quest. One way to overcome this and keep track of one request to the next is to use sessions
 
+#HTTP is a stateless protocol, which means that each request is independent of others. In other words, each request knows nothing about the previous or next re- quest. One way to overcome this and keep track of one request to the next is to use sessions
 
 def current_user 
   @current_user ||= User.find(session[:id]) if session[:id] 
@@ -16,7 +15,6 @@ end #This method determines whether a user is logged in or logged out. It does t
 def require_user 
   redirect(to('/'))  unless current_user 
 end
-
 
 get '/' do
   @user = User.find(session[:id])  unless session[:id] == nil
@@ -28,12 +26,13 @@ get '/registrations/signup' do
   erb(:"/registrations/signup")
 end
 
+## Sign up
 post '/registrations' do
   # It will have the code that gets the new user's info from the params, creates a new user, signs them in and then redirects them somewhere else.
   # @user = User.new(name: params["name"], email: params["email"], password: params["password"])
   @user = User.new(params)
   @user.save
-  session[:id] = @user.id
+  session[:id] = @user.id 
   redirect(to("/"))
 end
 
@@ -42,8 +41,9 @@ get '/sessions/login' do
   erb (:"/sessions/login")
 end
 
+## Login
 post '/sessions' do
-  #This route is responsible for receiving the POST request that gets sent when a user hits "submit" on that login form. This route has the code that grabs the user's info from the params, finds that user from the database and signs that user in.
+  #This route is responsible for receiving "post" request that wiil be sent when a user log into their accounts. This route has the code that grabs the user's info from the params, finds that user from the database and signs that user in.
   @user = User.find_by(params[:email], params[:password]) 
   if @user == nil
     @error = "Oops, your email and password did not match. Please try again."
@@ -54,6 +54,7 @@ post '/sessions' do
   end
 end
 
+#Log out
 get '/sessions/logout' do
   #This route is responsible for logging the user out by clearing the session hash.
   flash[:notice] = "You are being logged off!!"

@@ -31,6 +31,6 @@ end
 #Delete
 post "/categories/:id/delete" do
   @category = Category.delete(params[:id])
-  flash[:notice] = "Category successfully deleted!"
+  flash[:notice] = "Successfully deleted!"
   redirect(to("/categories/new"))
 end

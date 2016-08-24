@@ -26,8 +26,6 @@ get '/transactions/new' do
   @transactions = @current_user.transactions()
   @analysis = Analysis.new( @transactions )
   @user = User.find(@current_user.id)
-
-  #@users = User.all()
   erb(:'transactions/new')
 end
 
@@ -46,15 +44,14 @@ get '/transactions/analysis' do
   @analysis = Analysis.new( @transactions )
   @total = @analysis.total
   # @transactions = @analysis.percent
-  # binding.pry
   erb(:'/transactions/analysis')
 end
 
-#Show
-get '/transactions/:id' do
-  @transaction = Transaction.find(params[:id])
-  erb(:'transactions/show')
-end
+# #Show
+# get '/transactions/:id' do
+#   @transaction = Transaction.find(params[:id])
+#   erb(:'transactions/show')
+# end
 
 #Edit
 get '/transactions/:id/edit' do

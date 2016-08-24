@@ -22,11 +22,11 @@ def send_message
       :port => '587', 
       :enable_starttls_auto => true,
       :user_name => '921kiyo@gmail.com',
-      :password => '921kiyohito', # Put PW only when doing presentation
+      :password => 'password', # Put PW only when doing presentation
       :authentication => :plain,
       :domain => 'localhost.localdomain'
       }) 
 end
-
+#smtp is a server name
 
 
