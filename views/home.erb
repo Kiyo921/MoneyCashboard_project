@@ -11,6 +11,9 @@
       <% if current_user == nil%>
       <div class="container-fluid signup_form">
           <%= erb(:'/registrations/signup') %>
+          <% if @name == "" || @email == "" || @password == "" %>
+          <p class="error"><%= @error %></p>
+          <% end %>
       </div>
       <% end %>
       <div class="col-md-6">

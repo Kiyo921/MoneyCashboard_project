@@ -29,11 +29,20 @@ end
 ## Sign up
 post '/registrations' do
   # It will have the code that gets the new user's info from the params, creates a new user, signs them in and then redirects them somewhere else.
-  # @user = User.new(name: params["name"], email: params["email"], password: params["password"])
-  @user = User.new(params)
-  @user.save
-  session[:id] = @user.id 
-  redirect(to("/"))
+  @name = params[:name]
+  @email = params[:email]
+  @password = params[:password]
+
+  if @name == "" || @email == "" || @password == ""
+    @error = "Please fill in all the forms"
+    erb(:"/home")
+    # redirect(to("/"))
+  else
+    @user = User.new(params)
+    @user.save
+    session[:id] = @user.id 
+    redirect(to("/"))
+  end
 end
 
 get '/sessions/login' do
