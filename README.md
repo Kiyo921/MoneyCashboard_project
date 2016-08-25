@@ -30,3 +30,6 @@ Possible further functionality:
 - Create route that sends down Account data as JSON
 
 ## Installation
+
+In order to run the app, you need to install Sinatra (Link:[http://www.sinatrarb.com](http://www.sinatrarb.com)).
+Once installed, simply run main.rb in your terminal. 
