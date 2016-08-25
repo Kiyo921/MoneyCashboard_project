@@ -4,7 +4,7 @@
       <% if current_user == nil%>
       <h2 class="title1">Welcome to Money Cashboard!</h2>
       <% else %>
-      <h2 class="title1">Welcome, <%=@user.name%>!</h2>
+      <h2 class="title1">Welcome, <%= @user.name %>!</h2>
       <% end %>
       <img class="stock_market_logo" src="http://mcxcapitalviatips.com/wp-content/uploads/2014/08/chart_iconcopy.jpg" alt="stock market">
       <p class="lead">Money Dashboard is a personal financial assistant that shows you exactly where money goes and helps you make better decisions.</p>

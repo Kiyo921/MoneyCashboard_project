@@ -1,5 +1,5 @@
 require_relative('../models/user')
-#helper_method :current_user
+require("pry-byebug")
 
 configure do #Code inside this block is run only once at startup.
   enable :sessions #Session cookies only last for the term of a session, and are deleted when the user closes the browser.
@@ -14,11 +14,6 @@ end #This method determines whether a user is logged in or logged out. It does t
 
 def require_user 
   redirect(to('/'))  unless current_user 
-end
-
-get '/' do
-  @user = User.find(session[:id])  unless session[:id] == nil
-  erb :home
 end
 
 get '/registrations/signup' do

@@ -14,6 +14,7 @@
                   To:<input type="date" name="end_date">
                   <div class="filter-dropdown">
                     <select name="category_id" class="filter-dropdown form-control">
+                      <option disabled selected value> -- select category -- </option>
                       <% @categories.each do |category| %>
                       <% if @category_id == category.id %>
                       <option value="<%=category.id%>" selected="selected"><%=category.category_name %></option>
@@ -25,6 +26,7 @@
                   </div>
                   <div class="filter-dropdown">
                     <select name="merchant_id" class="filter-dropdown form-control">
+                      <option disabled selected value> -- select store -- </option>
                       <% @merchants.each do |merchant| %>
                       <% if @merchant_id == merchant.id %>
                       <option value="<%=merchant.id%>" selected="selected"><%=merchant.merchant_name %></option>

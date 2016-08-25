@@ -11,5 +11,6 @@ require_relative('controllers/contact_controller')
 
 
 get '/' do
-  erb :home
+  @user = User.find(session[:id])  unless session[:id] == nil
+  erb(:'/home')
 end
