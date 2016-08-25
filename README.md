@@ -1,5 +1,5 @@
 # MoneyCashboard Project
-This project is the first solo project, a 7day hackathon at CodeClan in Edinburgh
+This project is the first solo project, a 7-day hackathon at CodeClan in Edinburgh.
 ## The Brief
 Over the next week you have the chance to consolidate and expand on everything you have learned:
 
