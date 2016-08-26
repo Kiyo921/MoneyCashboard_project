@@ -1,7 +1,7 @@
  
 /*Home page*/
 .background_image{
-    background-image: url("http://qwikwebs.com/resources/ckfinder/userfiles/551a0df3e1e1ab53c7be3bcc2e476facimages/BD%20Financial%20Managment.jpg");
+    background-image: url("../images/background_image.jpg");
     height:100%;
     min-height:600px;
 }
@@ -124,7 +124,6 @@
 .btn {
     border: 0px;
     /*background-color: transparent;*/
-
 }
 
 /*Admin form*/
@@ -215,6 +214,11 @@
 
 .list-adjust{
     display:inline-flex;
+}
+
+/*Edit transaction*/
+.edit-transaction-button{
+    margin-bottom: 1px;
 }
 
 /*Login form*/

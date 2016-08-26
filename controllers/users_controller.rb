@@ -31,7 +31,6 @@ get "/users/:id" do
   end
   
   if params[:start_date] && params[:end_date] && !(params[:start_date] == "") && !(params[:end_date] == "")
-   
     @transactions = @analysis.filter_by_date( params[:start_date], params[:end_date] )
   end
   
@@ -53,6 +52,7 @@ end
 #Update
 post '/users/:id' do
   @user = User.update(params)
+  flash[:notice] = "Account info updated!"
   redirect(to("/"))
 end
 
