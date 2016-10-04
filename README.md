@@ -10,7 +10,7 @@ To consolidate and expand on the following skills
 - Web Programming ( REST/MVC )
 - Databases with CRUD actions
 
-## Main Functionalities
+## Main Functions
 - User can create an account and store their transaction records in their login account.
 - User can create new transactions, edit and delete the transactions.
 - User can see all transactions, and filter them by category/merchant/transaction date.
