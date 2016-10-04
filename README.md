@@ -30,4 +30,6 @@ Once installed, simply run main.rb in your terminal and open localhost in the br
 - PostgreSQL
 
 ## TO DO
-- Draw a pie chart for the total expenditures using JavaScript
+- Enable to draw a pie chart for the total expenditures using JavaScript
+- Hashing user's password
+- Enable to prevent duplication in the database
