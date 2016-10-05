@@ -1,35 +1,35 @@
 # MoneyCashboard Project
-This project is the first solo project, a 7-day hackathon at CodeClan in Edinburgh.
-## The Brief
-Over the next week you have the chance to consolidate and expand on everything you have learned:
+Spending management web application using Ruby Sinatra framework and PostgreSQL where user can create an account, keep track of spending by adding/deleting/editing transactions. 
 
+This project is the first solo project, a 7-day hackathon at [CodeClan](https://codeclan.com/) in Edinburgh.
+## Project Objectives
+To consolidate and expand on the following skills
 - Ruby fundamentals
 - TDD
 - OOP
 - Web Programming ( REST/MVC )
 - Databases with CRUD actions
 
-Your assignment is an opportunity to practice all or some of these principles. Next Thursday you can do a short presentation on what you have achieved and learned.
-
-
-## Project Description 
-
-You want to start tracking your spending in an attempt to be more frugal with money.
-
-You must be able to create new Transactions ( which should include merchant name e.g. Tesco and value ) which has an associated Tag (e.g. ‘food’). It would then be able to track a total. Your Account could then be displayed in a view.
-
-Suggested MVP:
-
-- Create new transactions
-- Display all transactions
-- Display total expenditure
-- Display total expenditure by tag
-
-Possible further functionality:
-- CRUD actions for the transactions
-- Create route that sends down Account data as JSON
+## Main Functions
+- User can create an account and store their transaction records in their login account.
+- User can create new transactions, edit and delete the transactions.
+- User can see all transactions, and filter them by category/merchant/transaction date.
+- User can see total expenditure by category/merchant/transaction date.
+- In contact us section, user can send an email to me. 
 
 ## Installation
 
 In order to run the app, you need to install Sinatra (Link:[http://www.sinatrarb.com](http://www.sinatrarb.com)).
-Once installed, simply run main.rb in your terminal. 
+Once installed, simply run main.rb in your terminal and open localhost in the browser. 
+
+## Technologies used
+- HTML
+- CSS
+- Ruby
+- Sinatra
+- PostgreSQL
+
+## TO DO
+- Enable to draw a pie chart for the total expenditures using JavaScript
+- Hashing user's password
+- Enable to prevent duplication in the database
