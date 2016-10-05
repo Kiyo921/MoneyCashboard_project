@@ -43,15 +43,10 @@ get '/transactions/analysis' do
   @transactions = @current_user.transactions()
   @analysis = Analysis.new( @transactions )
   @total = @analysis.total
-  # @transactions = @analysis.percent
+  # binding.pry
+  # @transactions = @analysis.percent(@total)
   erb(:'/transactions/analysis')
 end
-
-# #Show
-# get '/transactions/:id' do
-#   @transaction = Transaction.find(params[:id])
-#   erb(:'transactions/show')
-# end
 
 #Edit
 get '/transactions/:id/edit' do

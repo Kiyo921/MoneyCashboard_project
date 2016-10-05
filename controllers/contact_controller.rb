@@ -22,7 +22,7 @@ def send_message
       :port => '587', 
       :enable_starttls_auto => true,
       :user_name => '921kiyo@gmail.com',
-      :password => 'password', # Put PW only when doing presentation (Link for gmail setting: https://www.google.com/settings/security/lesssecureapps)
+      :password => '921kiyohito', # Put PW only when doing presentation (Link for gmail setting: https://www.google.com/settings/security/lesssecureapps)
       :authentication => :plain,
       :domain => 'localhost.localdomain'
       }) 

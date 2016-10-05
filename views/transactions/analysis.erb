@@ -4,38 +4,15 @@
       <div class="tabbable" id="tabs-839710">  
         <div class="container-fluid">
           <div class="row form_pie_chart">
-            <div class="col-md-6 pie_chart"> 
-              <img src="http://studentenfunk-regensburg.de/wp-content/uploads/2015/06/pie-chart.png" alt="Pie Chart">
+            <div class="col-md-6 pie_chart" id="pieChart"> 
             </div>
-            <div class="col-md-6">
-              <div class="chart_description">
-                <ul class="key">
-                  <li class="choice">
-                    <strong class="percent red">4%</strong>
-                    <span class="choice">Food</span>
-                  </li>
-                  <li class="choice">
-                    <strong class="percent gray">4%</strong>
-                    <span class="choice">Daily Goods</span>
-                  </li>
-                  <li class="choice">
-                    <strong class="percent purple">6%</strong>
-                    <span class="choice">Transport</span>
-                  </li>
-                  <li class="choice">
-                    <strong class="percent blue">9%</strong>
-                    <span class="choice">Socializing</span>
-                  </li>
-                  <li class="choice">
-                    <strong class="percent yellow">31%</strong>
-                    <span class="choice">Hobbies</span>
-                  </li>
-                  <li class="choice">
-                    <strong class="percent orange">46%</strong>
-                    <span class="choice">Education</span>
-                  </li>
-                </ul>
-              </div>
+            <div id="num">
+              <%= @total %>
+            </div>
+            <div>
+              <% @transactions.each do |transaction| %>
+              <%= @analysis.percent(transaction.amount)%>
+              <% end %>
             </div>
           </div>
         </div>
