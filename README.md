@@ -1,6 +1,8 @@
 # MoneyCashboard Project
 Spending management web application using Ruby Sinatra framework and PostgreSQL where user can create an account, keep track of spending by adding/deleting/editing transactions. 
 
+![Alt text](public/images/image.png?raw=true "Optional Title")
+
 This project is the first solo project, a 7-day hackathon at [CodeClan](https://codeclan.com/) in Edinburgh.
 ## Project Objectives
 To consolidate and expand on the following skills
